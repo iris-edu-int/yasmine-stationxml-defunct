@@ -1,0 +1,13 @@
+*.pyc
+dist
+*.egg-info
+.settings
+geckodriver.log
+build
+/ghostdriver.log
+/.pydevproject
+.vscode/*
+/debug.log
+*ghostdriver.log
+*debug.log
+/imct/static/js/imct/

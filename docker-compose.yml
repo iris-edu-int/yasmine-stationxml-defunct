@@ -1,0 +1,25 @@
+version: '3'
+services:
+    imct-frontend:
+        build: frontend
+        image: imct/frontend
+        container_name: imct-frontend
+        volumes:
+            - ./:/code
+        ports:
+            - "1841:1841"   
+        links:
+            - imct-backend
+    imct-backend:
+        ports:
+            - "80:80"
+        build: backend
+        image: imct/backend
+        container_name: imct-backend
+        stdin_open: true
+        tty: true        
+        volumes:
+            - IMCT:/opt/IMCT
+            - ./backend:/opt/IMCT/src               
+volumes:
+  IMCT:

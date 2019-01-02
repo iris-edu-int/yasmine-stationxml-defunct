@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Instrumentation Metadata Construction Tool</title>
+
+<script type="text/javascript">
+var Ext = Ext || {}; // Ext namespace won't be defined yet...
+// This function is called by the Microloader after it has performed basic
+// device detection. The results are provided in the "tags" object. You can
+// use these tags here or even add custom tags. These can be used by platform
+// filters in your manifest or by platformConfig expressions in your app.
+//
+var ExtAbsoluteBasePath = '/static/js/imct/microloader.js?v=dbc0b8bdd38847797ba89ba64eec25bb';
+ExtAbsoluteBasePath = ExtAbsoluteBasePath.slice(0, ExtAbsoluteBasePath.lastIndexOf('/') + 1);
+Ext.beforeLoad = function (tags) {
+var s = location.search, // the query string (ex "?foo=1&bar")
+profile;
+// For testing look for "?classic" or "?modern" in the URL to override
+// device detection default.
+//
+if (s.match(/\bclassic\b/)) {
+profile = 'classic';
+}
+else if (s.match(/\bmodern\b/)) {
+profile = 'modern';
+}
+else {
+profile = tags.desktop ? 'classic' : 'modern';
+//profile = tags.phone ? 'modern' : 'classic';
+}
+Ext.manifest = ExtAbsoluteBasePath + profile; // this name must match a build profile name
+// This function is called once the manifest is available but before
+// any data is pulled from it.
+//
+//return function (manifest) {
+// peek at / modify the manifest object
+//};
+};
+</script>
+<script id="microloader" data-app="725e6013-dc7c-4620-bf8c-64803da1f8ec" src="/static/js/imct/microloader.js?v=dbc0b8bdd38847797ba89ba64eec25bb"></script>
+
+</head>
+<body>
+
+
+</body>
+</html>
