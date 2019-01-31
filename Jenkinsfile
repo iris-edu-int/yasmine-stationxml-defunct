@@ -1,16 +1,21 @@
 pipeline {
     agent none
     stages {
-        stage('build') {
+        stage('clone') {
             steps {
-                node('docker1') {
-                    checkout(
+            checkout(
                         [$class: 'GitSCM', branches: [[name: '*/v1_iris_jenkins']], 
                         doGenerateSubmoduleConfigurations: false, 
                         extensions: [], 
                         submoduleCfg: [], 
                         userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
                     )
+            sh 'env'
+            }
+        }
+        stage('build') {
+            steps {
+                node('docker1') {
                     agent {
                         dockerfile {
                            filename 'Dockerfile'
