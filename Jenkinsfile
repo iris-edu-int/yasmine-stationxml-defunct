@@ -2,17 +2,22 @@ pipeline {
     agent none
     stages {
         stage('clone') {
-            steps {
+            agent {
                 node {
-                    checkout(
-                                [$class: 'GitSCM', branches: [[name: '*/v1_iris_jenkins']], 
-                                doGenerateSubmoduleConfigurations: false, 
-                                extensions: [], 
-                                submoduleCfg: [], 
-                                userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
-                            )
-                    sh 'env'
+                    label 'initial-git-clone'
+                    customWorkspace 'twister_clone'
                 }
+            }
+            steps {
+                checkout(
+                            [$class: 'GitSCM', branches: [[name: '*/v1_iris_jenkins']], 
+                            doGenerateSubmoduleConfigurations: false, 
+                            extensions: [], 
+                            submoduleCfg: [], 
+                            userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
+                        )
+                sh 'env'
+                sh 'ls twister-clone'
             }
         }
         stage('build') {
@@ -43,6 +48,3 @@ pipeline {
         }
     }
 }
-
-
-
