@@ -7,7 +7,7 @@ pipeline {
                     checkout(
                         [$class: 'GitSCM', branches: [[name: '*/v1_iris_jenkins']], 
                         doGenerateSubmoduleConfigurations: false, 
-                        extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [[path: 'frontend/*']]]], 
+                        extensions: [], 
                         submoduleCfg: [], 
                         userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
                     )
@@ -21,15 +21,6 @@ pipeline {
                         }
                     }
                     sh 'sencha app build'
-            	}
-                node('docker1') {
-                    checkout(
-                        [$class: 'GitSCM', branches: [[name: '*/v1_iris_jenkins']], 
-                        doGenerateSubmoduleConfigurations: false, 
-                        extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [[path: 'backend/*']]]], 
-                        submoduleCfg: [], 
-                        userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
-                    )
                     agent {
                         dockerfile {
                            filename 'Dockerfile'
