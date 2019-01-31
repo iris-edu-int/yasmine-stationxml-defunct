@@ -3,14 +3,16 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-            checkout(
-                        [$class: 'GitSCM', branches: [[name: '*/v1_iris_jenkins']], 
-                        doGenerateSubmoduleConfigurations: false, 
-                        extensions: [], 
-                        submoduleCfg: [], 
-                        userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
-                    )
-            sh 'env'
+                node {
+                    checkout(
+                                [$class: 'GitSCM', branches: [[name: '*/v1_iris_jenkins']], 
+                                doGenerateSubmoduleConfigurations: false, 
+                                extensions: [], 
+                                submoduleCfg: [], 
+                                userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
+                            )
+                    sh 'env'
+                }
             }
         }
         stage('build') {
