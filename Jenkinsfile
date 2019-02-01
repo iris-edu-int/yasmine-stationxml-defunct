@@ -11,13 +11,13 @@ pipeline {
                             submoduleCfg: [], 
                             userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
                         )
-                sh 'env'
-                sh 'ls twister-clone'
+                stash includes: '**/*', name: 'app_src'
             }
         }
         stage('build') {
             steps {
                 node('docker1') {
+                    unstash 'app_src'
                     agent {
                         dockerfile {
                            filename 'Dockerfile'
