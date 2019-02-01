@@ -15,16 +15,22 @@ pipeline {
             }
         }
         stage('build') {
+            environment {
+                frontEnd = ""
+                backEnd = ""
+            }
             steps {
                 node('docker1') {
-                    unstash 'app_src'
-                    def frontEnd = docker.build("frontend-test", "./frontend") 
-                    frontEnd.inside {
-                        sh 'sencha app build'
-                    }
-                    def backEnd = docker.build("backend-test", "./backend") 
-                    backEnd.inside {
-                        sh 'imctapp.py syncdb upgrade heads'
+                    script {
+                        unstash 'app_src'
+                        frontEnd = docker.build("frontend-test", "./frontend") 
+                        frontEnd.inside {
+                            sh 'sencha app build'
+                        }
+                        backEnd = docker.build("backend-test", "./backend") 
+                        backEnd.inside {
+                            sh 'imctapp.py syncdb upgrade heads'
+                        }
                     }
                 }
             }
