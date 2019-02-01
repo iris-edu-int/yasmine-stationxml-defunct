@@ -18,22 +18,14 @@ pipeline {
             steps {
                 node('docker1') {
                     unstash 'app_src'
-                    dockerfile {
-                       filename 'Dockerfile'
-                       dir 'frontend'
-                       label 'frontend-test'
-                       //additionalBuildArgs  '--build-arg version=1.0.2'
-                       //args '-v /tmp:/tmp'
+                    def frontEnd = docker.build("frontend-test", "./frontend") 
+                    frontEnd.inside {
+                        sh 'sencha app build'
                     }
-                    sh 'sencha app build'
-                    dockerfile {
-                       filename 'Dockerfile'
-                       dir 'backend'
-                       label 'backend-test'
-                       //additionalBuildArgs  '--build-arg version=1.0.2'
-                       //args '-v /tmp:/tmp'
+                    def backEnd = docker.build("backend-test", "./backend") 
+                    backEnd.inside {
+                        sh 'imctapp.py syncdb upgrade heads'
                     }
-                    sh 'imctapp.py syncdb upgrade heads'
                 }
             }
         }
