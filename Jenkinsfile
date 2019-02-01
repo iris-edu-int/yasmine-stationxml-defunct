@@ -2,11 +2,7 @@ pipeline {
     agent none
     stages {
         stage('clone') {
-            agent {
-                node {
-                    customWorkspace 'twister_clone'
-                }
-            }
+            agent any
             steps {
                 checkout(
                             [$class: 'GitSCM', branches: [[name: '*/v1_iris_jenkins']], 
