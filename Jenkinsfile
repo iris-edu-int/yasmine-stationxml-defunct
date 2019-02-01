@@ -4,7 +4,6 @@ pipeline {
         stage('clone') {
             agent {
                 node {
-                    label 'initial-git-clone'
                     customWorkspace 'twister_clone'
                 }
             }
