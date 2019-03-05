@@ -24,13 +24,7 @@ pipeline {
                     script {
                         unstash 'app_src'
                         frontEnd = docker.build("frontend-test", "./frontend") 
-                        frontEnd.inside {
-                            sh 'sencha app build'
-                        }
-                        backEnd = docker.build("backend-test", "./backend") 
-                        backEnd.inside {
-                            sh 'imctapp.py syncdb upgrade heads'
-                        }
+                        backEnd = docker.build("backend-test", "./backend")
                     }
                 }
             }
