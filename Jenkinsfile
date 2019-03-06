@@ -23,8 +23,8 @@ pipeline {
                 node('docker1') {
                     script {
                         unstash 'app_src'
-                        frontEnd = docker.build("frontend-test", "./frontend") 
-                        backEnd = docker.build("backend-test", "./backend")
+                        sh "sudo docker build -t frontend-test ./frontend"
+                        sh "sudo docker build -t backend-test ./backend"
                     }
                 }
             }
