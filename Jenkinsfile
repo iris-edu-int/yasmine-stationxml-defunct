@@ -23,8 +23,8 @@ pipeline {
                 node('docker1') {
                     script {
                         unstash 'app_src'
-                        sh "sudo docker build -t frontend-test ./frontend"
-                        sh "sudo docker build -t backend-test ./backend"
+                        sh "sudo docker build -t frontend-test -f Dockerfile.tomcat ./frontend"
+                        sh "sudo docker build -t backend-test -f Dockerfile.tomcat ./backend"
                     }
                 }
             }
