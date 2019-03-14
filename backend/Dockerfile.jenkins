@@ -8,6 +8,8 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 RUN apt-get update
 RUN apt-get -y install google-chrome-stable
+# build this in for interactive editing
+RUN apt-get -y install vim
 
 RUN cd /tmp && \
     wget https://chromedriver.storage.googleapis.com/2.39/chromedriver_linux64.zip -O chromedriver.zip --progress=bar:force && \
@@ -16,14 +18,16 @@ RUN cd /tmp && \
     rm chromedriver.zip && \
     chmod +x /opt/chromedriver/chromedriver
 
+RUN pip install --upgrade pip
+
 RUN pip install -r requirements.txt
 
 # for this container, we will repurpose it later to perform a pyinstaller bundling action
 RUN pip install pyinstaller
 
-# for this container, we want to be able to run it as a normal user, we'll go with tomcat
-RUN useradd -m tomcat && \
-    cd && cp -R .bashrc .profile /home/tomcat
+# for this container, we want to be able to run it as a normal user, we'll go with jenkins as the name
+RUN useradd -m jenkins && \
+    cd && cp -R .bashrc .profile /home/jenkins
 
 CMD python imctapp.py syncdb upgrade heads ; python imctapp.py runserver --debug
 

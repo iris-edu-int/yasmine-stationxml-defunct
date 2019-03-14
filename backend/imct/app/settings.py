@@ -5,10 +5,13 @@ from imct.app.utils.op_sys import is_windows
 
 ROOT_DIR = os.path.join(os.path.dirname(__file__), '..')
 
-if is_windows():
-    APP_DIR = os.path.join('c:', os.sep, 'IMCT')
-else:
-    APP_DIR = os.path.join(os.sep, 'opt', 'IMCT')
+#if is_windows():
+#    APP_DIR = os.path.join('c:', os.sep, 'IMCT')
+#else:
+#    APP_DIR = os.path.join(os.sep, 'opt', 'IMCT')
+
+# REC - 3/8/19 - set APP_DIR to the cwd + IMCT
+APP_DIR = os.path.join(os.sep, os.getcwd(), 'IMCT')
 
 RUN_ROOT = os.path.join(APP_DIR, '_run')
 
