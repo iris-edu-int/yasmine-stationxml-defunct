@@ -10,6 +10,9 @@ RUN apt-get update
 RUN apt-get -y install google-chrome-stable
 # build this in for interactive editing
 RUN apt-get -y install vim
+RUN apt-get -y install binutils
+RUN apt-get -y install procps
+RUN apt-get -y install zip
 
 RUN cd /tmp && \
     wget https://chromedriver.storage.googleapis.com/2.39/chromedriver_linux64.zip -O chromedriver.zip --progress=bar:force && \

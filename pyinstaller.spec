@@ -5,10 +5,43 @@ from PyInstaller.utils.hooks import collect_submodules, collect_data_files
 
 block_cipher = None
 
-#was:             hiddenimports=[],
-_hiddenimports=collect_submodules('scipy')
+_hiddenimports=collect_submodules('PyInstaller',
+'alembic',
+'altgraph',
+'apscheduler',
+'certifi',
+'chardet',
+'dateutil',
+'future',
+'humanize',
+'idna',
+'jsonpickle',
+'libfuturize',
+'libpasteurize',
+'lxml',
+'macholib',
+'mako',
+'markupsafe',
+'matplotlib',
+'mpl_toolkits',
+'numpy',
+'obspy',
+'ordlookup',
+'past',
+'pytz',
+'requests',
+'scipy',
+'selenium',
+'setuptools',
+'slugify',
+'sqlalchemy',
+'tornado',
+'tzlocal',
+'unidecode',
+'urllib3',
+'wheel')
+
 _datas=collect_data_files('imct')
-#_datas.append( ('/usr/local/lib/python3.6/site-packages/obspy/imaging/data/*.*','site-packages/obspy/imaging/data') )
 
 a = Analysis(['/Applications/Anaconda/anaconda3/envs/imct-env/bin/imctapp.py'],
              pathex=['/Users/rob/isti-devel/pyinstaller'],
