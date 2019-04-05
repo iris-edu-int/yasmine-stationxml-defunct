@@ -8,7 +8,7 @@ block_cipher = None
 #was:             hiddenimports=[],
 _hiddenimports=collect_submodules('scipy')
 _datas=collect_data_files('imct')
-_datas.append( ('/usr/local/lib/python3.6/site-packages/obspy/imaging/data/*.*','site-packages/obspy/imaging/data') )
+#_datas.append( ('/usr/local/lib/python3.6/site-packages/obspy/imaging/data/*.*','site-packages/obspy/imaging/data') )
 
 a = Analysis(['/Applications/Anaconda/anaconda3/envs/imct-env/bin/imctapp.py'],
              pathex=['/Users/rob/isti-devel/pyinstaller'],
