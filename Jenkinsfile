@@ -23,6 +23,7 @@ pipeline {
                 node('docker1') {
                     script {
                         unstash 'app_src'
+			sh "chmod -R 777 frontend backend"
                         sh "sudo docker build -t frontend-test -f frontend/Dockerfile.jenkins ./frontend"
                         sh "sudo docker build -t backend-test -f backend/Dockerfile.jenkins ./backend"
 			sh "chmod -R 777 frontend backend; echo 'cd /opt/IMCT/frontend; sencha app build' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT frontend-test bash"
