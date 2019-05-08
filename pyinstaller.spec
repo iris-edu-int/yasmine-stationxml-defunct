@@ -42,9 +42,10 @@ _hiddenimports=collect_submodules('PyInstaller',
 'wheel')
 
 _datas=collect_data_files('imct')
+_datas.append( ('/usr/local/lib/python3.6/site-packages/obspy/imaging/data/*.*','site-packages/obspy/imaging/data') )
 
-a = Analysis(['/Applications/Anaconda/anaconda3/envs/imct-env/bin/imctapp.py'],
-             pathex=['/Users/rob/isti-devel/pyinstaller'],
+a = Analysis(['imctapp.py'],
+             pathex=['/opt/IMCT/src'],
              binaries=[],
              datas=_datas,
              hiddenimports=_hiddenimports,
@@ -53,14 +54,17 @@ a = Analysis(['/Applications/Anaconda/anaconda3/envs/imct-env/bin/imctapp.py'],
              excludes=[],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
-             cipher=block_cipher)
+             cipher=block_cipher,
+             noarchive=False)
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
+          [],
           exclude_binaries=True,
           name='imctapp',
-          debug=True,
+          debug=False,
+          bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           console=True )
