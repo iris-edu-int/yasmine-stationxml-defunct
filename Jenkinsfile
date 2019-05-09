@@ -25,8 +25,8 @@ pipeline {
                         unstash 'app_src'
                         sh "sudo docker build -t frontend-test -f frontend/Dockerfile.jenkins ./frontend"
                         sh "sudo docker build -t backend-test -f backend/Dockerfile.jenkins ./backend"
-			sh "umask 0000; echo 'cd /opt/IMCT/frontend; sencha app build' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT frontend-test bash"
-                        sh "umask 0000; echo 'cd /opt/IMCT/backend; python setup.py sdist; cd ../src; pyinstaller ../pyinstaller.spec' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT backend-test bash"
+			sh "echo 'cd /opt/IMCT/frontend; sencha app build' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT frontend-test bash"
+                        sh "echo 'cd /opt/IMCT/backend; python setup.py sdist; cd ../src; pyinstaller ../pyinstaller.spec' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT backend-test bash"
 			sh "sudo docker image prune -f"
                     }
                 }
