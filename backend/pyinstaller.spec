@@ -5,7 +5,8 @@ from PyInstaller.utils.hooks import collect_submodules, collect_data_files
 
 block_cipher = None
 
-_hiddenimports=collect_submodules('PyInstaller',
+_hiddenimports=collect_submodules('PyInstaller')
+other_submodules = (
 'alembic',
 'altgraph',
 'apscheduler',
@@ -40,6 +41,9 @@ _hiddenimports=collect_submodules('PyInstaller',
 'unidecode',
 'urllib3',
 'wheel')
+
+for submod in other_submodules:
+	_hiddenimports.append( collect_submodules(submod) )
 
 _datas=collect_data_files('imct')
 _datas.append( ('/usr/local/lib/python3.6/site-packages/obspy/imaging/data/*.*','site-packages/obspy/imaging/data') )
