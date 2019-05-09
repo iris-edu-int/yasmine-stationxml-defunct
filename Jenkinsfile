@@ -24,7 +24,18 @@ pipeline {
                     script {
                         unstash 'app_src'
 			sh "sudo docker image prune -f"
-			sh "sudo docker rmi backend-test frontend-test"
+			try {
+				sh "sudo docker rmi frontend-test"
+			} catch (err) {
+				echo err
+				echo "Error detected, but we will continue."
+			}
+			try {
+				sh "sudo docker rmi backend-test"
+			} catch (err) {
+				echo err
+				echo "Error detected, but we will continue."
+			}
                         sh "sudo docker build -t frontend-test -f frontend/Dockerfile.jenkins ./frontend"
                         sh "sudo docker build -t backend-test -f backend/Dockerfile.jenkins ./backend"
 			try {
