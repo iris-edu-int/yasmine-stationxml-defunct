@@ -45,7 +45,7 @@ _datas=collect_data_files('imct')
 _datas.append( ('/usr/local/lib/python3.6/site-packages/obspy/imaging/data/*.*','site-packages/obspy/imaging/data') )
 
 a = Analysis(['imctapp.py'],
-             pathex=['/opt/IMCT/src'],
+             pathex=['/opt/IMCT/backend'],
              binaries=[],
              datas=_datas,
              hiddenimports=_hiddenimports,
