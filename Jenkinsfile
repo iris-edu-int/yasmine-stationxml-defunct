@@ -27,13 +27,13 @@ pipeline {
 			try {
 				sh "sudo docker rmi frontend-test"
 			} catch (err) {
-				echo err
+				echo err.getMessage()
 				echo "Error detected, but we will continue."
 			}
 			try {
 				sh "sudo docker rmi backend-test"
 			} catch (err) {
-				echo err
+				echo err.getMessage()
 				echo "Error detected, but we will continue."
 			}
                         sh "sudo docker build -t frontend-test -f frontend/Dockerfile.jenkins ./frontend"
@@ -41,7 +41,7 @@ pipeline {
 			try {
 				sh "chmod -fR 777 . frontend backend | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT frontend-test bash"
 			} catch (err) {
-				echo err
+				echo err.getMessage()
 				echo "Error detected on frontend chmod, but we will continue."
 			}
 			sh "echo 'cd /opt/IMCT/frontend; sencha app build' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT frontend-test bash"
