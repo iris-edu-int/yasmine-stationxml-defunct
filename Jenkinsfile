@@ -45,7 +45,7 @@ pipeline {
 				echo "Error detected on frontend chmod, but we will continue."
 			}
 			sh "echo 'cd /opt/IMCT/frontend; sencha app build' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT frontend-test bash"
-                        sh "echo 'cd /opt/IMCT/backend; python setup.py sdist; pyinstaller pyinstaller.spec' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT backend-test bash"
+                        sh "echo 'cd /opt/IMCT/backend; python setup.py sdist; pyinstaller -y pyinstaller.spec' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT backend-test bash"
                     }
                 }
             }
