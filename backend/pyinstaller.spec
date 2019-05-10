@@ -2,7 +2,7 @@
 
 from obspy.imaging.cm import viridis
 from PyInstaller.utils.hooks import collect_submodules, collect_data_files
-from PyInstaller.compat import modname_tkinter
+#from PyInstaller.compat import modname_tkinter
 
 block_cipher = None
 
@@ -60,7 +60,7 @@ a = Analysis(['imctapp.py'],
              binaries=[],
              datas=_datas,
              hiddenimports=_hiddenimports,
-             excludedimports = [modname_tkinter],
+#             excludedimports = [modname_tkinter],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
