@@ -6,42 +6,47 @@ from PyInstaller.utils.hooks import collect_submodules, collect_data_files
 block_cipher = None
 
 _hiddenimports=[]
+
+#import_submodules = (
+#'PyInstaller'
+#'alembic',
+#'altgraph',
+#'apscheduler',
+#'certifi',
+#'chardet',
+#'dateutil',
+#'future',
+#'humanize',
+#'idna',
+#'jsonpickle',
+#'libfuturize',
+#'libpasteurize',
+#'lxml',
+#'macholib',
+#'mako',
+#'markupsafe',
+#'matplotlib',
+#'mpl_toolkits',
+#'numpy',
+#'obspy',
+#'ordlookup',
+#'past',
+#'pytz',
+#'requests',
+#'scipy',
+#'selenium',
+#'setuptools',
+#'slugify',
+#'sqlalchemy',
+#'tornado',
+#'tzlocal',
+#'unidecode',
+#'urllib3',
+#'wheel')
+
 import_submodules = (
-'PyInstaller'
-'alembic',
-'altgraph',
-'apscheduler',
-'certifi',
-'chardet',
-'dateutil',
-'future',
-'humanize',
-'idna',
-'jsonpickle',
-'libfuturize',
-'libpasteurize',
-'lxml',
-'macholib',
-'mako',
-'markupsafe',
-'matplotlib',
-'mpl_toolkits',
-'numpy',
-'obspy',
-'ordlookup',
-'past',
-'pytz',
-'requests',
-'scipy',
-'selenium',
-'setuptools',
-'slugify',
-'sqlalchemy',
-'tornado',
-'tzlocal',
-'unidecode',
-'urllib3',
-'wheel')
+'scipy'
+)
 
 for submod in import_submodules:
 	_hiddenimports += collect_submodules(submod)
