@@ -1,4 +1,4 @@
-Ext.define("imct.utils.CheckUtil", {
+Ext.define("yasmine.utils.CheckUtil", {
     singleton: true,
     isEmpty: function (value) {
         if (value === '' || value == null || value == undefined) {

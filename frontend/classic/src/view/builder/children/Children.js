@@ -1,10 +1,10 @@
-Ext.define('imct.view.xml.builder.children.Children', {
+Ext.define('yasmine.view.xml.builder.children.Children', {
     extend: 'Ext.panel.Panel',
     xtype: 'children',
     requires: [
         'Ext.view.View',
-        'imct.view.xml.builder.children.ChildrenModel',
-        'imct.view.xml.builder.children.ChildrenController'
+        'yasmine.view.xml.builder.children.ChildrenModel',
+        'yasmine.view.xml.builder.children.ChildrenController'
     ],
     viewModel: 'children',
     controller: 'children',
@@ -103,8 +103,8 @@ Ext.define('imct.view.xml.builder.children.Children', {
                     '<tpl if="type == \'node\'">',
                         '<div style="text-align: end;"><span style="color: black;font-weight: 500;">{nodeTypeName}</span> <i class="fa {iconCls}" aria-hidden="true"></i></div>',
                         '<div><b>Code: </b> <span style="color: black;">{name}</span></div>',
-                        '<div><b>Start: </b> <span style="color: black;">{start:date(IMCT.Globals.DatePrintShortFormat)}</span></div>',
-                        '<div><b>End: </b> <span style="color: black;">{end:date(IMCT.Globals.DatePrintShortFormat)}</span></div>',
+                        '<div><b>Start: </b> <span style="color: black;">{start:date(yasmine.Globals.DatePrintShortFormat)}</span></div>',
+                        '<div><b>End: </b> <span style="color: black;">{end:date(yasmine.Globals.DatePrintShortFormat)}</span></div>',
                     '</tpl>',
                     '<tpl if="nodeType == 1">',
                         '<div><b>Description: </b><span style="color: black;">{description}</span></div>',
@@ -139,7 +139,7 @@ Ext.define('imct.view.xml.builder.children.Children', {
     tools:[
         {
             type:'help',
-            handler: function() { imct.utils.HelpUtil.helpMe('children', 'Node Navigation') }
+            handler: function() { yasmine.utils.HelpUtil.helpMe('children', 'Node Navigation') }
         }
     ]
 });

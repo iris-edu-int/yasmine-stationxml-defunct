@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelView', {
+Ext.define('yasmine.view.xml.builder.wizard.WizardCreateChannelView', {
     extend: 'Ext.window.Window',
     xtype: 'wizard-create-channel',
-    requires: ['imct.view.xml.builder.wizard.WizardCreateChannelController','imct.view.xml.builder.wizard.WizardCreateChannelModel',
-        'imct.view.xml.builder.parameter.items.text.TextEditor','imct.view.xml.builder.parameter.items.date.DateEditor','imct.ChannelOrient'],
+    requires: ['yasmine.view.xml.builder.wizard.WizardCreateChannelController','yasmine.view.xml.builder.wizard.WizardCreateChannelModel',
+        'yasmine.view.xml.builder.parameter.items.text.TextEditor','yasmine.view.xml.builder.parameter.items.date.DateEditor','yasmine.ChannelOrient'],
     controller: 'wizard-create-channel',
     viewModel: 'wizard-create-channel',
     modal: true,
@@ -26,42 +26,42 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelView', {
         },
         width: 400,
         items: [{
-            xtype: 'imct-text-field',
+            xtype: 'yasmine-text-field',
             itemId: 'location_code',
             fieldLabel: 'Location Code',
             bind: {
                 value: '{record.value}'
             }
         },{
-            xtype: 'imct-date-field',
+            xtype: 'yasmine-date-field',
             itemId: 'start_date',
             fieldLabel: 'Start Date',
             bind: {
                 value: '{record.value}'
             }
         },{
-            xtype: 'imct-latitude-field',
+            xtype: 'yasmine-latitude-field',
             itemId: 'latitude',
             fieldLabel: 'Latitude',
             bind: {
                 value: '{record.value}'
             }
         },{
-            xtype: 'imct-longitude-field',
+            xtype: 'yasmine-longitude-field',
             itemId: 'longitude',
             fieldLabel: 'Longitude',
             bind: {
                 value: '{record.value}'
             }
         },{
-            xtype: 'imct-float-field',
+            xtype: 'yasmine-float-field',
             itemId: 'elevation',
             fieldLabel: 'Elevation',
             bind: {
                 value: '{record.value}'
             }
         },{
-            xtype: 'imct-float-field',
+            xtype: 'yasmine-float-field',
             itemId: 'depth',
             fieldLabel: 'Depth',
             bind: {
@@ -130,7 +130,7 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelView', {
             store: {
                 store: 'store.array',
                 fields: ['id','name'],
-                data: [[imct.ChannelOrient.ZNE,'ZNE (3 channels)'],[imct.ChannelOrient.Z12,'Z12 (3 channels)'],[imct.ChannelOrient.Z,'Z (1 channel)']]
+                data: [[yasmine.ChannelOrient.ZNE,'ZNE (3 channels)'],[yasmine.ChannelOrient.Z12,'Z12 (3 channels)'],[yasmine.ChannelOrient.Z,'Z (1 channel)']]
             },
             forceSelection: true
         }]
@@ -149,26 +149,26 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelView', {
             },
             layout: 'hbox',
             items: [{
-                xtype: 'imct-text-field',
+                xtype: 'yasmine-text-field',
                 itemId: 'code1',
                 viewModel: {
                     type: 'text-editor',
                     data: {
-                        nodeType: imct.NodeTypeEnum.channel
+                        nodeType: yasmine.NodeTypeEnum.channel
                     }
                 },
                 bind: {
                     value: '{record.value}'
                 }
             },{
-                xtype: 'imct-text-field',
+                xtype: 'yasmine-text-field',
                 itemId: 'code2',
                 bind: {
                     hidden: '{oneChannel}',
                     value: '{record.value}'
                 }
             },{
-                xtype: 'imct-text-field',
+                xtype: 'yasmine-text-field',
                 itemId: 'code3',
                 bind: {
                     hidden: '{oneChannel}',
@@ -183,20 +183,20 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelView', {
             },
             layout: 'hbox',
             items: [{
-                xtype: 'imct-float-field',
+                xtype: 'yasmine-float-field',
                 itemId: 'dip1',
                 bind: {
                     value: '{record.value}'
                 }
             },{
-                xtype: 'imct-float-field',
+                xtype: 'yasmine-float-field',
                 itemId: 'dip2',
                 bind: {
                     hidden: '{oneChannel}',
                     value: '{record.value}'
                 }
             },{
-                xtype: 'imct-float-field',
+                xtype: 'yasmine-float-field',
                 itemId: 'dip3',
                 bind: {
                     hidden: '{oneChannel}',
@@ -211,20 +211,20 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelView', {
             },
             layout: 'hbox',
             items: [{
-                xtype: 'imct-float-field',
+                xtype: 'yasmine-float-field',
                 itemId: 'azimuth1',
                 bind: {
                     value: '{record.value}'
                 }
             },{
-                xtype: 'imct-float-field',
+                xtype: 'yasmine-float-field',
                 itemId: 'azimuth2',
                 bind: {
                     hidden: '{oneChannel}',
                     value: '{record.value}'
                 }
             },{
-                xtype: 'imct-float-field',
+                xtype: 'yasmine-float-field',
                 itemId: 'azimuth3',
                 bind: {
                     hidden: '{oneChannel}',
@@ -255,7 +255,7 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelView', {
     tools: [{
         type: 'help',
         handler: function (){
-            imct.utils.HelpUtil.helpMe('wizard_create_channel', 'Create Channel')
+            yasmine.utils.HelpUtil.helpMe('wizard_create_channel', 'Create Channel')
         }
     },{
         type: 'close',

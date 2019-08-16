@@ -1,5 +1,5 @@
-Ext.define("imct.view.xml.builder.parameter.items.channeltypes.ChannelTypesPreview", {
-    xtype: 'imct-channel-types-field-preview',
+Ext.define("yasmine.view.xml.builder.parameter.items.channeltypes.ChannelTypesPreview", {
+    xtype: 'yasmine-channel-types-field-preview',
     getPreview: function (value){
         if (!value) {
             return null;

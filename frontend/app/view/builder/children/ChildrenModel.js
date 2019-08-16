@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.children.ChildrenModel', {
+Ext.define('yasmine.view.xml.builder.children.ChildrenModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.children',
     requires: [
-        'imct.NodeTypeEnum'
+        'yasmine.NodeTypeEnum'
     ],
     data: {
         title: '',
@@ -11,12 +11,12 @@ Ext.define('imct.view.xml.builder.children.ChildrenModel', {
         selectedItem: null,
         selectedEpoch: null,
         selectedChildId: null,
-        nodeType: imct.NodeTypeEnum.network
+        nodeType: yasmine.NodeTypeEnum.network
     },
     stores: {
         childrenStore: {
             storeId: 'childrenStore',
-            model: 'imct.view.xml.builder.children.Item',
+            model: 'yasmine.view.xml.builder.children.Item',
             autoLoad: true,
             proxy: {
                 type: 'rest',
@@ -27,7 +27,7 @@ Ext.define('imct.view.xml.builder.children.ChildrenModel', {
         },
         epochStore: {
             storeId: 'epochStore',
-            model: 'imct.view.xml.builder.children.Date',
+            model: 'yasmine.view.xml.builder.children.Date',
             autoLoad: false,
             proxy: {
                 type: 'rest',
@@ -48,27 +48,27 @@ Ext.define('imct.view.xml.builder.children.ChildrenModel', {
             return get('selectedItem') && get('selectedItem').get('type') === 'node';
         },
         canCreateChannel: function (get) {
-            return get('nodeType') == imct.NodeTypeEnum.channel;
+            return get('nodeType') == yasmine.NodeTypeEnum.channel;
         }
     }
 });
 
-Ext.define('imct.view.xml.builder.children.Item', {
+Ext.define('yasmine.view.xml.builder.children.Item', {
     extend: 'Ext.data.Model',
     fields: [
         { name: 'name', type: 'string' },
         { name: 'type', type: 'string', defaultValue: 'node' },
         { name: 'locationColor', type: 'string', convert: function (v, record) {
             var locationCode = record.get('location_code');
-            return (locationCode) ? IMCT.Globals.LocationColorScale(locationCode) : '#e4e4e4';
+            return (locationCode) ? yasmine.Globals.LocationColorScale(locationCode) : '#e4e4e4';
         } },
         { name: 'parentId', type: 'int' },
         { name: 'description', type: 'string', convert: function (v, record) {
             var desc = record.get('description');
-            return desc ? desc : IMCT.Globals.NotApplicable
+            return desc ? desc : yasmine.Globals.NotApplicable
         } },
-        { name: 'start', type: 'date', dateFormat: IMCT.Globals.DateReadFormat },
-        { name: 'end', type: 'date', dateFormat: IMCT.Globals.DateReadFormat },
+        { name: 'start', type: 'date', dateFormat: yasmine.Globals.DateReadFormat },
+        { name: 'end', type: 'date', dateFormat: yasmine.Globals.DateReadFormat },
         {
             name: 'iconCls', type: 'string', persist: false,
             depends: ['nodeType'],
@@ -76,13 +76,13 @@ Ext.define('imct.view.xml.builder.children.Item', {
                 if (record.get('root')) {
                     return 'fa-file-code-o';
                 }
-                return imct.utils.NodeTypeConverter.toIcon(record.get('nodeType')) 
+                return yasmine.utils.NodeTypeConverter.toIcon(record.get('nodeType')) 
             }
         },
         { name: 'nodeType', type: 'int', persist: false },
         { name: 'nodeTypeName', type: 'string', persist: false, depends: ['nodeType'],
             convert: function(value, record) { 
-                return imct.utils.NodeTypeConverter.toString(record.get('nodeType'));
+                return yasmine.utils.NodeTypeConverter.toString(record.get('nodeType'));
             } 
         },
         { name: 'longitude', persist: false },
@@ -95,10 +95,10 @@ Ext.define('imct.view.xml.builder.children.Item', {
     ]
 });
 
-Ext.define('imct.view.xml.builder.children.Date', {
+Ext.define('yasmine.view.xml.builder.children.Date', {
     extend: 'Ext.data.Model',
     fields: [
-        { name: 'date', type: 'date', persist: false, dateFormat: IMCT.Globals.DateReadFormat },
+        { name: 'date', type: 'date', persist: false, dateFormat: yasmine.Globals.DateReadFormat },
         {
             name: 'dateString',
             type: 'string',
@@ -107,7 +107,7 @@ Ext.define('imct.view.xml.builder.children.Date', {
             convert: function (value, record) {
                 var date = record.get('date');
                 if (date) {
-                    return Ext.Date.format(date, IMCT.Globals.DatePrintLongFormat);
+                    return Ext.Date.format(date, yasmine.Globals.DatePrintLongFormat);
                 }
 
                 return null;

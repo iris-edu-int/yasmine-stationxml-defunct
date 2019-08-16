@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.builder.templates.TemplateView', {
+Ext.define('yasmine.view.xml.builder.templates.TemplateView', {
     extend: 'Ext.window.Window',
     xtype: 'template-view',
     requires: [
-        'imct.view.xml.builder.templates.TemplateViewController',
-        'imct.view.xml.builder.templates.TemplateViewModel'
+        'yasmine.view.xml.builder.templates.TemplateViewController',
+        'yasmine.view.xml.builder.templates.TemplateViewModel'
     ],
     controller: 'template-view',
     viewModel: 'template-view',
@@ -54,7 +54,7 @@ Ext.define('imct.view.xml.builder.templates.TemplateView', {
     tools:[
         {
             type:'help',
-            handler: function() { imct.utils.HelpUtil.helpMe('templates', 'Templates') }
+            handler: function() { yasmine.utils.HelpUtil.helpMe('templates', 'Templates') }
         },
         {
             type:'close',

@@ -14,7 +14,7 @@ var Ext = Ext || {}; // Ext namespace won't be defined yet...
 // use these tags here or even add custom tags. These can be used by platform
 // filters in your manifest or by platformConfig expressions in your app.
 //
-var ExtAbsoluteBasePath = '/static/js/imct/microloader.js?v=dbc0b8bdd38847797ba89ba64eec25bb';
+var ExtAbsoluteBasePath = '/static/js/yasmine/microloader.js?v=dbc0b8bdd38847797ba89ba64eec25bb';
 ExtAbsoluteBasePath = ExtAbsoluteBasePath.slice(0, ExtAbsoluteBasePath.lastIndexOf('/') + 1);
 Ext.beforeLoad = function (tags) {
 var s = location.search, // the query string (ex "?foo=1&bar")
@@ -41,7 +41,7 @@ Ext.manifest = ExtAbsoluteBasePath + profile; // this name must match a build pr
 //};
 };
 </script>
-<script id="microloader" data-app="725e6013-dc7c-4620-bf8c-64803da1f8ec" src="/static/js/imct/microloader.js?v=dbc0b8bdd38847797ba89ba64eec25bb"></script>
+<script id="microloader" data-app="725e6013-dc7c-4620-bf8c-64803da1f8ec" src="/static/js/yasmine/microloader.js?v=dbc0b8bdd38847797ba89ba64eec25bb"></script>
 
 </head>
 <body>

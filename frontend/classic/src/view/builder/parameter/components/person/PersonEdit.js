@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.builder.parameter.components.person.PersonEdit', {
+Ext.define('yasmine.view.xml.builder.parameter.components.person.PersonEdit', {
     extend: 'Ext.window.Window',
     xtype: 'person-edit',
     requires: [
-        'imct.view.xml.builder.parameter.components.person.PersonEditModel',
-        'imct.view.xml.builder.parameter.components.person.PersonEditController'
+        'yasmine.view.xml.builder.parameter.components.person.PersonEditModel',
+        'yasmine.view.xml.builder.parameter.components.person.PersonEditController'
     ],
     controller: 'person-edit',
     viewModel: 'person-edit',

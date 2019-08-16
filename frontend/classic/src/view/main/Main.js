@@ -1,11 +1,11 @@
-Ext.define('imct.view.main.Main', {
+Ext.define('yasmine.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-        'imct.view.main.MainController',
-        'imct.view.main.MainModel'
+        'yasmine.view.main.MainController',
+        'yasmine.view.main.MainModel'
     ],
     controller: 'main',
     viewModel: 'main',

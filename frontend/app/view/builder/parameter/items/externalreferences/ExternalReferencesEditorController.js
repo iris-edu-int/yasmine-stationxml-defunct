@@ -1,5 +1,5 @@
-Ext.define('imct.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditorController', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorController',
+Ext.define('yasmine.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditorController', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorController',
     alias: 'controller.external-references-editor',
     initData: function () {
         var record = this.getViewModel().get('record');
@@ -25,7 +25,7 @@ Ext.define('imct.view.xml.builder.parameter.items.externalreferences.ExternalRef
         record.set('value', references);
     },
     onAddClick: function () {
-        var record = new imct.view.xml.builder.parameter.items.externalreferences.ExternalReference();
+        var record = new yasmine.view.xml.builder.parameter.items.externalreferences.ExternalReference();
         var store = this.getViewModel().getStore('dataStore');
         store.insert(0, record);
 

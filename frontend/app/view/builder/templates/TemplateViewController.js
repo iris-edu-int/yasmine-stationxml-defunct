@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.templates.TemplateViewController', {
+Ext.define('yasmine.view.xml.builder.templates.TemplateViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.template-view',
     id: 'template-view-controller', // Required for event listening

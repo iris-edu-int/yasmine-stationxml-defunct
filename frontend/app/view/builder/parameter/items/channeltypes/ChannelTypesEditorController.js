@@ -1,12 +1,12 @@
-Ext.define('imct.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditorController', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorController',
+Ext.define('yasmine.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditorController', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorController',
     alias: 'controller.channel-types-editor',
     initData: function () {
         var record = this.getViewModel().get('record');
         if (record.get('value')) {
             var store = this.getViewModel().getStore('channelTypeStore');
             record.get('value').forEach(function (value) {
-                var date = new imct.view.xml.builder.parameter.items.channeltypes.ChannelType();
+                var date = new yasmine.view.xml.builder.parameter.items.channeltypes.ChannelType();
                 date.set('value', value);
                 date.modified = {};
                 store.add(date);
@@ -23,7 +23,7 @@ Ext.define('imct.view.xml.builder.parameter.items.channeltypes.ChannelTypesEdito
         record.set('value', values);
     },
     onAddClick: function () {
-        var record = new imct.view.xml.builder.parameter.items.channeltypes.ChannelType();
+        var record = new yasmine.view.xml.builder.parameter.items.channeltypes.ChannelType();
         var store = this.getViewModel().getStore('channelTypeStore');
         store.insert(0, record);
 

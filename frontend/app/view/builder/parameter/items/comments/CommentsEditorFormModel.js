@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.items.comments.CommentsEditorFormModel', {
+Ext.define('yasmine.view.xml.builder.parameter.items.comments.CommentsEditorFormModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.comments-editor-form',
     data: {

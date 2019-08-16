@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.XmlImport', {
+Ext.define('yasmine.view.xml.XmlImport', {
     extend: 'Ext.window.Window',
     xtype: 'xml-import',
     requires: [
         'Ext.form.Panel',
-        'imct.view.xml.import.XmlImportController'
+        'yasmine.view.xml.import.XmlImportController'
     ],
     controller: 'xml-import',
     title: 'Import XML',

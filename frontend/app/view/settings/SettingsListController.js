@@ -1,11 +1,11 @@
-Ext.define('imct.view.settings.SettingsListController', {
+Ext.define('yasmine.view.settings.SettingsListController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.settings',
     requires: [
         'Ext.window.Toast'
     ],
     init: function () {
-        imct.view.settings.Settings.load(0, {
+        yasmine.view.settings.Settings.load(0, {
             scope: this,
             success: function (record, operation) {
                 this.getViewModel().set('settings', record);
@@ -32,6 +32,6 @@ Ext.define('imct.view.settings.SettingsListController', {
     },
     applySettings: function () {
         var setting = this.getViewModel().get('settings');
-        imct.utils.SettingsUtil.applySettings(setting);
+        yasmine.utils.SettingsUtil.applySettings(setting);
     }
 });

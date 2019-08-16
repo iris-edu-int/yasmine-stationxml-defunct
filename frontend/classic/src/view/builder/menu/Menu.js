@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.menu.Menu', {
+Ext.define('yasmine.view.xml.builder.menu.Menu', {
     extend: 'Ext.toolbar.Toolbar',
     requires: [
-        'imct.view.xml.builder.menu.MenuController',
-        'imct.view.xml.builder.menu.MenuModel'
+        'yasmine.view.xml.builder.menu.MenuController',
+        'yasmine.view.xml.builder.menu.MenuModel'
     ],
     xtype: 'builder-menu',
     style: 'background-color: rgb(236, 236, 236)',

@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditorForm', {
+Ext.define('yasmine.view.xml.builder.parameter.items.operators.OperatorsEditorForm', {
     extend: 'Ext.window.Window',
     xtype: 'operators-editor-form',
     requires: [
-        'imct.view.xml.builder.parameter.items.operators.OperatorsEditorFormModel',
-        'imct.view.xml.builder.parameter.items.operators.OperatorsEditorFormController'
+        'yasmine.view.xml.builder.parameter.items.operators.OperatorsEditorFormModel',
+        'yasmine.view.xml.builder.parameter.items.operators.OperatorsEditorFormController'
     ],
     controller: 'operators-editor-form',
     viewModel: 'operators-editor-form',

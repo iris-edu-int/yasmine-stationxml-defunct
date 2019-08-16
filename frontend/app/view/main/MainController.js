@@ -1,4 +1,4 @@
-Ext.define('imct.view.main.MainController', {
+Ext.define('yasmine.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
     routes: {

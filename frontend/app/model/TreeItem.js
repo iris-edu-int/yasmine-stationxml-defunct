@@ -1,6 +1,6 @@
-Ext.define('imct.model.TreeItem', {
+Ext.define('yasmine.model.TreeItem', {
     extend: 'Ext.data.TreeModel',
-    requires: ['imct.NodeTypeEnum'],
+    requires: ['yasmine.NodeTypeEnum'],
     proxy: {
         reader: {
             rootProperty: "children"
@@ -20,7 +20,7 @@ Ext.define('imct.model.TreeItem', {
                 if (record.get('root')) {
                     return 'fa-file-code-o';
                 }
-                return imct.utils.NodeTypeConverter.toIcon(record.get('nodeType')) 
+                return yasmine.utils.NodeTypeConverter.toIcon(record.get('nodeType')) 
             }
         }
     ]

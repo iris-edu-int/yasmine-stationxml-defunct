@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterList', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterList', {
     extend: 'Ext.grid.Panel',
     xtype: 'parameter-list',
-    requires: ['Ext.toolbar.Paging','imct.view.xml.builder.parameter.ParameterListModel','imct.view.xml.builder.parameter.ParameterListController',
-        'imct.view.xml.builder.parameter.ParameterEditor','imct.view.xml.builder.parameter.ParameterEditorExt'],
+    requires: ['Ext.toolbar.Paging','yasmine.view.xml.builder.parameter.ParameterListModel','yasmine.view.xml.builder.parameter.ParameterListController',
+        'yasmine.view.xml.builder.parameter.ParameterEditor','yasmine.view.xml.builder.parameter.ParameterEditorExt'],
     viewModel: 'parameter-list',
     controller: 'parameter-list',
     bind: {
@@ -105,7 +105,7 @@ Ext.define('imct.view.xml.builder.parameter.ParameterList', {
     tools: [{
         type: 'help',
         handler: function (){
-            imct.utils.HelpUtil.helpMe('parameter_list', 'Node Information')
+            yasmine.utils.HelpUtil.helpMe('parameter_list', 'Node Information')
         }
     }]
 });

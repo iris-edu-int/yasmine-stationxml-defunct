@@ -1,5 +1,5 @@
-Ext.define("imct.view.xml.builder.parameter.items.comments.CommentsPreview", {
-    xtype: 'imct-comments-field-preview',
+Ext.define("yasmine.view.xml.builder.parameter.items.comments.CommentsPreview", {
+    xtype: 'yasmine-comments-field-preview',
     getPreview: function(value) {
         if (!value || value.length === 0) {
             return null;

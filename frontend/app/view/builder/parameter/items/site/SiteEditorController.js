@@ -1,5 +1,5 @@
-Ext.define('imct.view.xml.builder.parameter.items.site.SiteEditorController', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorController',
+Ext.define('yasmine.view.xml.builder.parameter.items.site.SiteEditorController', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorController',
     alias: 'controller.site-editor',
     initData: function () {
         var value = this.getViewModel().get('record').get('value');

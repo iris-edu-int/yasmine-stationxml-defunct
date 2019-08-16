@@ -1,11 +1,11 @@
-Ext.define('imct.view.xml.builder.children.ChildrenController', {
+Ext.define('yasmine.view.xml.builder.children.ChildrenController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.children',
     id: 'children-controller', // Required for event listening
     requires: [
         'Ext.window.Toast',
-        'imct.view.xml.builder.templates.TemplateView',
-        'imct.view.xml.builder.wizard.WizardCreateChannelView'        
+        'yasmine.view.xml.builder.templates.TemplateView',
+        'yasmine.view.xml.builder.wizard.WizardCreateChannelView'        
     ],
     listen: {
         store: {
@@ -47,7 +47,7 @@ Ext.define('imct.view.xml.builder.children.ChildrenController', {
     },
     onAddClick: function () {
         var breadcrumb = this.getViewModel().get('breadcrumb');
-        var nodeType = imct.NodeTypeEnum.network;
+        var nodeType = yasmine.NodeTypeEnum.network;
         var parentId = null;
         var selectedItem = this.getViewModel().get('selectedItem');
         if (selectedItem && selectedItem.get('type') === 'node') {
@@ -55,7 +55,7 @@ Ext.define('imct.view.xml.builder.children.ChildrenController', {
             parentId = selectedItem.get('parentId');
         } else if (breadcrumb.length > 0) {
             var node = breadcrumb[breadcrumb.length - 1];
-            nodeType = imct.utils.NodeTypeConverter.getChild(node.get('nodeType'));
+            nodeType = yasmine.utils.NodeTypeConverter.getChild(node.get('nodeType'));
             parentId = node.get('id');
         }
 
@@ -68,7 +68,7 @@ Ext.define('imct.view.xml.builder.children.ChildrenController', {
     },
     onWizardClick: function () {
         var me = this;
-        imct.view.xml.builder.wizard.ChannelCreation.load(this.getViewModel().get('nodeId'), {
+        yasmine.view.xml.builder.wizard.ChannelCreation.load(this.getViewModel().get('nodeId'), {
             success: function (record, operation) {
                 var wizardView = Ext.create({
                     xtype: 'wizard-create-channel',
@@ -167,7 +167,7 @@ Ext.define('imct.view.xml.builder.children.ChildrenController', {
         var selectedItem = this.getViewModel().get('selectedItem');
         var epoch = this.getViewModel().get('selectedEpoch');
         if (epoch){
-        	epoch = Ext.Date.format(epoch.get('date'), IMCT.Globals.DateReadFormat)
+        	epoch = Ext.Date.format(epoch.get('date'), yasmine.Globals.DateReadFormat)
         }
         Ext.Ajax.request({
             url: `/api/xml/template/`,
@@ -261,11 +261,11 @@ Ext.define('imct.view.xml.builder.children.ChildrenController', {
         this.buildTitle();
     },
     onChildrenBeforeLoad: function (store) {
-        IMCT.Globals.LocationColorScale = d3.scaleOrdinal(d3.schemeCategory10);
+        yasmine.Globals.LocationColorScale = d3.scaleOrdinal(d3.schemeCategory10);
         store.removeAll();
         var breadcrumb = this.getViewModel().get('breadcrumb');
         if (breadcrumb.length !== 0) {
-            store.add(new imct.view.xml.builder.children.Item({ type: 'back' }));
+            store.add(new yasmine.view.xml.builder.children.Item({ type: 'back' }));
         };
     },
     reloadStore: function () {
@@ -273,7 +273,7 @@ Ext.define('imct.view.xml.builder.children.ChildrenController', {
         store.clearFilter(true);
         var epoch = this.getViewModel().get('selectedEpoch');
         if (epoch) {
-            store.addFilter([{ property: 'epoch', value: Ext.Date.format(epoch.get('date'), IMCT.Globals.DateReadFormat) }]);
+            store.addFilter([{ property: 'epoch', value: Ext.Date.format(epoch.get('date'), yasmine.Globals.DateReadFormat) }]);
         }
 
         store.load({ addRecords: true });

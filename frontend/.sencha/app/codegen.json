@@ -29,13 +29,13 @@
       "parameters": {
         "appControllers": "",
         "appModels": "",
-        "appName": "imct",
+        "appName": "yasmine",
         "appStores": "",
         "appViews": "",
         "classic": false,
         "controllerFileName": "Main",
         "controllerName": "Main",
-        "controllerNamespace": "imct.controller",
+        "controllerNamespace": "yasmine.controller",
         "frameworkIsV62": "true",
         "frameworkIsV65": "false",
         "frameworkKey": "ext",
@@ -43,9 +43,9 @@
         "frameworkPath": "ext",
         "frameworkVer": "6.2.0.981",
         "fwIs60": false,
-        "modelNamespace": "imct.model",
+        "modelNamespace": "yasmine.model",
         "modern": false,
-        "name": "imct",
+        "name": "yasmine",
         "packagesRelPath": "ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
@@ -54,7 +54,7 @@
         "universal": true,
         "viewFileName": "Main",
         "viewName": "Main",
-        "viewNamespace": "imct.view"
+        "viewNamespace": "yasmine.view"
       }
     },
     ".sencha/app/testing.properties": {
@@ -63,13 +63,13 @@
       "parameters": {
         "appControllers": "",
         "appModels": "",
-        "appName": "imct",
+        "appName": "yasmine",
         "appStores": "",
         "appViews": "",
         "classic": false,
         "controllerFileName": "Main",
         "controllerName": "Main",
-        "controllerNamespace": "imct.controller",
+        "controllerNamespace": "yasmine.controller",
         "frameworkIsV62": "true",
         "frameworkIsV65": "false",
         "frameworkKey": "ext",
@@ -77,9 +77,9 @@
         "frameworkPath": "ext",
         "frameworkVer": "6.2.0.981",
         "fwIs60": false,
-        "modelNamespace": "imct.model",
+        "modelNamespace": "yasmine.model",
         "modern": false,
-        "name": "imct",
+        "name": "yasmine",
         "packagesRelPath": "ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
@@ -88,7 +88,7 @@
         "universal": true,
         "viewFileName": "Main",
         "viewName": "Main",
-        "viewNamespace": "imct.view"
+        "viewNamespace": "yasmine.view"
       }
     },
     ".sencha/app/production.properties": {
@@ -97,13 +97,13 @@
       "parameters": {
         "appControllers": "",
         "appModels": "",
-        "appName": "imct",
+        "appName": "yasmine",
         "appStores": "",
         "appViews": "",
         "classic": false,
         "controllerFileName": "Main",
         "controllerName": "Main",
-        "controllerNamespace": "imct.controller",
+        "controllerNamespace": "yasmine.controller",
         "frameworkIsV62": "true",
         "frameworkIsV65": "false",
         "frameworkKey": "ext",
@@ -111,9 +111,9 @@
         "frameworkPath": "ext",
         "frameworkVer": "6.2.0.981",
         "fwIs60": false,
-        "modelNamespace": "imct.model",
+        "modelNamespace": "yasmine.model",
         "modern": false,
-        "name": "imct",
+        "name": "yasmine",
         "packagesRelPath": "ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
@@ -122,7 +122,7 @@
         "universal": true,
         "viewFileName": "Main",
         "viewName": "Main",
-        "viewNamespace": "imct.view"
+        "viewNamespace": "yasmine.view"
       }
     },
     ".sencha/app/package.properties": {
@@ -131,13 +131,13 @@
       "parameters": {
         "appControllers": "",
         "appModels": "",
-        "appName": "imct",
+        "appName": "yasmine",
         "appStores": "",
         "appViews": "",
         "classic": false,
         "controllerFileName": "Main",
         "controllerName": "Main",
-        "controllerNamespace": "imct.controller",
+        "controllerNamespace": "yasmine.controller",
         "frameworkIsV62": "true",
         "frameworkIsV65": "false",
         "frameworkKey": "ext",
@@ -145,9 +145,9 @@
         "frameworkPath": "ext",
         "frameworkVer": "6.2.0.981",
         "fwIs60": false,
-        "modelNamespace": "imct.model",
+        "modelNamespace": "yasmine.model",
         "modern": false,
-        "name": "imct",
+        "name": "yasmine",
         "packagesRelPath": "ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
@@ -156,7 +156,7 @@
         "universal": true,
         "viewFileName": "Main",
         "viewName": "Main",
-        "viewNamespace": "imct.view"
+        "viewNamespace": "yasmine.view"
       }
     },
     ".sencha/app/build.properties": {
@@ -165,13 +165,13 @@
       "parameters": {
         "appControllers": "",
         "appModels": "",
-        "appName": "imct",
+        "appName": "yasmine",
         "appStores": "",
         "appViews": "",
         "classic": false,
         "controllerFileName": "Main",
         "controllerName": "Main",
-        "controllerNamespace": "imct.controller",
+        "controllerNamespace": "yasmine.controller",
         "frameworkIsV62": "true",
         "frameworkIsV65": "false",
         "frameworkKey": "ext",
@@ -179,9 +179,9 @@
         "frameworkPath": "ext",
         "frameworkVer": "6.2.0.981",
         "fwIs60": false,
-        "modelNamespace": "imct.model",
+        "modelNamespace": "yasmine.model",
         "modern": false,
-        "name": "imct",
+        "name": "yasmine",
         "packagesRelPath": "ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
@@ -190,7 +190,7 @@
         "universal": true,
         "viewFileName": "Main",
         "viewName": "Main",
-        "viewNamespace": "imct.view"
+        "viewNamespace": "yasmine.view"
       }
     },
     ".sencha/app/sencha.cfg": {
@@ -199,13 +199,13 @@
       "parameters": {
         "appControllers": "",
         "appModels": "",
-        "appName": "imct",
+        "appName": "yasmine",
         "appStores": "",
         "appViews": "",
         "classic": false,
         "controllerFileName": "Main",
         "controllerName": "Main",
-        "controllerNamespace": "imct.controller",
+        "controllerNamespace": "yasmine.controller",
         "frameworkIsV62": "true",
         "frameworkIsV65": "false",
         "frameworkKey": "ext",
@@ -213,9 +213,9 @@
         "frameworkPath": "ext",
         "frameworkVer": "6.2.0.981",
         "fwIs60": false,
-        "modelNamespace": "imct.model",
+        "modelNamespace": "yasmine.model",
         "modern": false,
-        "name": "imct",
+        "name": "yasmine",
         "packagesRelPath": "ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
@@ -224,7 +224,7 @@
         "universal": true,
         "viewFileName": "Main",
         "viewName": "Main",
-        "viewNamespace": "imct.view"
+        "viewNamespace": "yasmine.view"
       }
     },
     ".sencha/app/development.properties": {
@@ -233,13 +233,13 @@
       "parameters": {
         "appControllers": "",
         "appModels": "",
-        "appName": "imct",
+        "appName": "yasmine",
         "appStores": "",
         "appViews": "",
         "classic": false,
         "controllerFileName": "Main",
         "controllerName": "Main",
-        "controllerNamespace": "imct.controller",
+        "controllerNamespace": "yasmine.controller",
         "frameworkIsV62": "true",
         "frameworkIsV65": "false",
         "frameworkKey": "ext",
@@ -247,9 +247,9 @@
         "frameworkPath": "ext",
         "frameworkVer": "6.2.0.981",
         "fwIs60": false,
-        "modelNamespace": "imct.model",
+        "modelNamespace": "yasmine.model",
         "modern": false,
-        "name": "imct",
+        "name": "yasmine",
         "packagesRelPath": "ext/packages",
         "senchadir": ".sencha",
         "themeName": "default",
@@ -258,7 +258,7 @@
         "universal": true,
         "viewFileName": "Main",
         "viewName": "Main",
-        "viewNamespace": "imct.view"
+        "viewNamespace": "yasmine.view"
       }
     }
   }

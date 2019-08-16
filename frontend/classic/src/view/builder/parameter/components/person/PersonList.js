@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.builder.parameter.components.person.PersonList', {
+Ext.define('yasmine.view.xml.builder.parameter.components.person.PersonList', {
     extend: 'Ext.grid.Panel',
     xtype: 'person-list',
     requires: [
-        'imct.view.xml.builder.parameter.components.person.PersonListModel',
-        'imct.view.xml.builder.parameter.components.person.PersonListController'
+        'yasmine.view.xml.builder.parameter.components.person.PersonListModel',
+        'yasmine.view.xml.builder.parameter.components.person.PersonListController'
     ],
     viewModel: 'person-list',
     controller: 'person-list',
@@ -21,7 +21,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonList', {
                     return value.map(function (item) { return item._name }).join('; ');
                 }
 
-                return IMCT.Globals.NotApplicable;
+                return yasmine.Globals.NotApplicable;
             },
             flex: 1
         },
@@ -33,7 +33,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonList', {
                     return value.map(function (item) { return item._email }).join('; ');
                 }
 
-                return IMCT.Globals.NotApplicable;
+                return yasmine.Globals.NotApplicable;
             },
             flex: 1
         },
@@ -45,7 +45,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonList', {
                     return value.map(function (item) { return item._name }).join('; ');
                 }
 
-                return IMCT.Globals.NotApplicable;
+                return yasmine.Globals.NotApplicable;
             },
             flex: 1
         }

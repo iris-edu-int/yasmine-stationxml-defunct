@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.menu.MenuController', {
+Ext.define('yasmine.view.xml.builder.menu.MenuController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.menu',
     onExportXmlClick: function() {
-        imct.store.FileLoader.load(`api/xml/ie/${this.getViewModel().get('xmlId')}`);
+        yasmine.store.FileLoader.load(`api/xml/ie/${this.getViewModel().get('xmlId')}`);
     },
     onValidateXmlClick: function() {
         Ext.Ajax.request({

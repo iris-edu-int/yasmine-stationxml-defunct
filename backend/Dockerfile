@@ -1,6 +1,6 @@
 FROM python:3.6.5-slim
-ADD . /opt/IMCT/src
-WORKDIR /opt/IMCT/src
+ADD . /opt/yasmine/src
+WORKDIR /opt/yamsine/src
 
 RUN apt-get update && apt-get install -y wget unzip gnupg
 
@@ -17,5 +17,5 @@ RUN cd /tmp && \
     chmod +x /opt/chromedriver/chromedriver
 
 RUN pip install -r requirements.txt
-CMD python imctapp.py syncdb upgrade heads ; python imctapp.py runserver --debug
+CMD python yasmine.py syncdb upgrade heads ; python yasmine.py runserver --debug
 

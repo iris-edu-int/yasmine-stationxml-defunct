@@ -1,4 +1,4 @@
-Ext.define("imct.utils.ValidatorUtil", {
+Ext.define("yasmine.utils.ValidatorUtil", {
     singleton : true,
     validate : function(nodeType, attributeName, value, only_critical) {
         var result;

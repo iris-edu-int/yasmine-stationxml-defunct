@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.edit.XmlEditController', {
+Ext.define('yasmine.view.xml.edit.XmlEditController', {
     extend: 'Ext.app.ViewController',
     id: 'xmlEdit-controller', // Required for event listening
     alias: 'controller.xml-edit',

@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.builder.parameter.items.site.SiteEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.site.SiteEditor', {
     extend: 'Ext.form.Panel',
-    xtype: 'imct-site-field',
+    xtype: 'yasmine-site-field',
     requires: [
-        'imct.view.xml.builder.parameter.items.site.SiteEditorModel',
-        'imct.view.xml.builder.parameter.items.site.SiteEditorController'
+        'yasmine.view.xml.builder.parameter.items.site.SiteEditorModel',
+        'yasmine.view.xml.builder.parameter.items.site.SiteEditorController'
     ],
     viewModel: 'site-editor',
     controller: 'site-editor',

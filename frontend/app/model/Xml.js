@@ -1,4 +1,4 @@
-Ext.define('imct.model.Xml', {
+Ext.define('yasmine.model.Xml', {
     extend: 'Ext.data.Model',
     proxy: {
         type: 'rest',

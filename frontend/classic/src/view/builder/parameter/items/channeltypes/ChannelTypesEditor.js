@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditor', {
     extend: 'Ext.form.Panel',
-    xtype: 'imct-channel-types-field',
-    requires: ['imct.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditorModel',
-        'imct.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditorController'],
+    xtype: 'yasmine-channel-types-field',
+    requires: ['yasmine.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditorModel',
+        'yasmine.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditorController'],
     viewModel: 'channel-types-editor',
     controller: 'channel-types-editor',
     border: true,

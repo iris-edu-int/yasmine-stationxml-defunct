@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterItemEditorModel', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterItemEditorModel', {
     extend: 'Ext.app.ViewModel',
     data: {
         record: null,

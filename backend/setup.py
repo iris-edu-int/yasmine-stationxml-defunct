@@ -6,7 +6,7 @@ with open('requirements.txt', 'rt') as f:
     requires = f.read().split()
 
 setup(
-    name='IMCT',
+    name='yasmine',
     version='1.0',
     packages=find_packages(),
     package_data={
@@ -14,7 +14,7 @@ setup(
     },
     include_package_data=True,
     description='',
-    scripts=['imctapp.py'],
+    scripts=['yasmine.py'],
     install_requires=requires,
     classifiers=[
         'Environment :: Web Environment',

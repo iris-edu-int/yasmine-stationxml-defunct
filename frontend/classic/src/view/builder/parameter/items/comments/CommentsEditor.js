@@ -1,7 +1,7 @@
-Ext.define('imct.view.xml.builder.parameter.items.comments.CommentsEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.comments.CommentsEditor', {
     extend: 'Ext.form.Panel',
-    xtype: 'imct-comments-field',
-    requires: ['imct.view.xml.builder.parameter.items.comments.CommentsEditorModel','imct.view.xml.builder.parameter.items.comments.CommentsEditorController'],
+    xtype: 'yasmine-comments-field',
+    requires: ['yasmine.view.xml.builder.parameter.items.comments.CommentsEditorModel','yasmine.view.xml.builder.parameter.items.comments.CommentsEditorController'],
     viewModel: 'comments-editor',
     controller: 'comments-editor',
     items: [{
@@ -24,31 +24,31 @@ Ext.define('imct.view.xml.builder.parameter.items.comments.CommentsEditor', {
         columns: [{
             header: 'Comment',
             dataIndex: '_value',
-            emptyCellText: IMCT.Globals.NotApplicable,
+            emptyCellText: yasmine.Globals.NotApplicable,
             flex: 1
         },{
             header: 'Effective Start Date',
             dataIndex: 'beginEffectiveTime',
             xtype: 'datecolumn',
-            format: IMCT.Globals.DatePrintLongFormat,
-            emptyCellText: IMCT.Globals.NotApplicable,
+            format: yasmine.Globals.DatePrintLongFormat,
+            emptyCellText: yasmine.Globals.NotApplicable,
             flex: 1
         },{
             header: 'Effective End Date',
             dataIndex: 'endEffectiveTime',
             xtype: 'datecolumn',
-            format: IMCT.Globals.DatePrintLongFormat,
-            emptyCellText: IMCT.Globals.NotApplicable,
+            format: yasmine.Globals.DatePrintLongFormat,
+            emptyCellText: yasmine.Globals.NotApplicable,
             flex: 1
         },{
             header: 'Authors',
             dataIndex: '_authors',
             flex: 1,
-            emptyCellText: IMCT.Globals.NotApplicable,
+            emptyCellText: yasmine.Globals.NotApplicable,
             renderer: function (value){
                 if (!value ||
                     value.length === 0) {
-                    return IMCT.Globals.NotApplicable;
+                    return yasmine.Globals.NotApplicable;
                 }
                 var result = [];
                 value.forEach(function (person){

@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.import.XmlImportController', {
+Ext.define('yasmine.view.xml.import.XmlImportController', {
     extend: 'Ext.app.ViewController',
     id: 'xmlImport-controller',
     alias: 'controller.xml-import',

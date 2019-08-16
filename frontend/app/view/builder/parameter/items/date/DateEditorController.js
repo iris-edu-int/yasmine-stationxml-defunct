@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.items.date.DateEditorController', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorController',
+Ext.define('yasmine.view.xml.builder.parameter.items.date.DateEditorController', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorController',
     alias: 'controller.date-editor'
 });

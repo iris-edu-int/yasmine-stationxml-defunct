@@ -1,11 +1,11 @@
-Ext.define('imct.view.xml.builder.tree.Tree', {
+Ext.define('yasmine.view.xml.builder.tree.Tree', {
     extend: 'Ext.tree.Panel',
     alias: 'widget.tree',
     title: 'Inventory',
     width: 350,
     requires: [
-        'imct.view.xml.builder.tree.TreeModel',
-        'imct.view.xml.builder.tree.TreeController'
+        'yasmine.view.xml.builder.tree.TreeModel',
+        'yasmine.view.xml.builder.tree.TreeController'
     ],
     rootVisible: true,
     useArrows: true,

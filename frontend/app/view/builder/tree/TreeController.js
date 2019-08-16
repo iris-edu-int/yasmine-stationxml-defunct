@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.builder.tree.TreeController', {
+Ext.define('yasmine.view.xml.builder.tree.TreeController', {
     extend: 'Ext.app.ViewController',
     id: 'tree-controller', // Required for event listening
     alias: 'controller.tree',
     requires: [
-        'imct.view.xml.builder.tree.TreeEdit'
+        'yasmine.view.xml.builder.tree.TreeEdit'
     ],
     listen: {
         controller: {
@@ -51,15 +51,15 @@ Ext.define('imct.view.xml.builder.tree.TreeController', {
         return true;
     },
     onAddClick: function () {
-        var nodeType = imct.NodeTypeEnum.network;
+        var nodeType = yasmine.NodeTypeEnum.network;
         var parentId = null;
         var parent = this.getSelectedRecord();
         if (parent && !parent.get('root')) {
-            nodeType = imct.utils.NodeTypeConverter.getChild(parent.get('nodeType'));
+            nodeType = yasmine.utils.NodeTypeConverter.getChild(parent.get('nodeType'));
             parentId = parent.get('id');
         }
 
-        var newRecord = new imct.model.TreeItem();
+        var newRecord = new yasmine.model.TreeItem();
         newRecord.set('nodeType', nodeType);
         newRecord.set('parentId', parentId);
 

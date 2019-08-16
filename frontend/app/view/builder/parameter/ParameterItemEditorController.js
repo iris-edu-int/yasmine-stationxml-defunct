@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterItemEditorController', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterItemEditorController', {
     extend: 'Ext.app.ViewController',
     validate: function (){
         var record = this.getViewModel().get('record');
@@ -21,7 +21,7 @@ Ext.define('imct.view.xml.builder.parameter.ParameterItemEditorController', {
             var record = this.getViewModel().get('record');
             var only_critical = record.get('only_critical');
             this.lastValidatedValue = value;
-            this.lastValidatedResult = imct.utils.ValidatorUtil.validate(record.get('node_id'), record.get('name'), value, record.get('only_critical'));
+            this.lastValidatedResult = yasmine.utils.ValidatorUtil.validate(record.get('node_id'), record.get('name'), value, record.get('only_critical'));
         }
         return this.lastValidatedResult;
     }

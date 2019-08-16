@@ -1,13 +1,13 @@
-Ext.define('imct.view.xml.builder.XmlBuilder', {
+Ext.define('yasmine.view.xml.builder.XmlBuilder', {
     extend: 'Ext.panel.Panel',
     xtype: 'xmlBuilder',
     requires: [
-        'imct.view.xml.builder.tree.Tree',
-        'imct.view.xml.builder.BuilderModel',
-        'imct.view.xml.builder.BuilderController',
-        'imct.view.xml.builder.parameter.ParameterList',
-        'imct.view.xml.builder.children.Children',
-        'imct.view.xml.builder.menu.Menu'
+        'yasmine.view.xml.builder.tree.Tree',
+        'yasmine.view.xml.builder.BuilderModel',
+        'yasmine.view.xml.builder.BuilderController',
+        'yasmine.view.xml.builder.parameter.ParameterList',
+        'yasmine.view.xml.builder.children.Children',
+        'yasmine.view.xml.builder.menu.Menu'
     ],
     controller: 'builder',
     viewModel: 'builder',

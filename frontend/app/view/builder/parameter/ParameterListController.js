@@ -1,23 +1,23 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterListController', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterListController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.parameter-list',
     id: 'parameter-list-controller', // Required for event listening
     requires: [
-        'imct.view.xml.builder.parameter.items.text.TextPreview',
-        'imct.view.xml.builder.parameter.items.comments.CommentsPreview',
-        'imct.view.xml.builder.parameter.items.date.DatePreview',
-        'imct.view.xml.builder.parameter.items.int.IntPreview',
-        'imct.view.xml.builder.parameter.items.latitude.LatitudePreview',
-        'imct.view.xml.builder.parameter.items.longitude.LongitudePreview',
-        'imct.view.xml.builder.parameter.items.operators.OperatorsPreview',
-        'imct.view.xml.builder.parameter.items.site.SitePreview',
-        'imct.view.xml.builder.parameter.items.float.FloatPreview',
-        'imct.view.xml.builder.parameter.items.unrecognized.UnrecognizedPreview',
-        'imct.view.xml.builder.parameter.items.externalreferences.ExternalReferencesPreview',
-        'imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentPreview',
-        'imct.view.xml.builder.parameter.items.channeltypes.ChannelTypesPreview',
-        'imct.view.xml.builder.parameter.items.channelresponse.ChannelResponsePreview',
-        'imct.NodeTypeEnum'
+        'yasmine.view.xml.builder.parameter.items.text.TextPreview',
+        'yasmine.view.xml.builder.parameter.items.comments.CommentsPreview',
+        'yasmine.view.xml.builder.parameter.items.date.DatePreview',
+        'yasmine.view.xml.builder.parameter.items.int.IntPreview',
+        'yasmine.view.xml.builder.parameter.items.latitude.LatitudePreview',
+        'yasmine.view.xml.builder.parameter.items.longitude.LongitudePreview',
+        'yasmine.view.xml.builder.parameter.items.operators.OperatorsPreview',
+        'yasmine.view.xml.builder.parameter.items.site.SitePreview',
+        'yasmine.view.xml.builder.parameter.items.float.FloatPreview',
+        'yasmine.view.xml.builder.parameter.items.unrecognized.UnrecognizedPreview',
+        'yasmine.view.xml.builder.parameter.items.externalreferences.ExternalReferencesPreview',
+        'yasmine.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentPreview',
+        'yasmine.view.xml.builder.parameter.items.channeltypes.ChannelTypesPreview',
+        'yasmine.view.xml.builder.parameter.items.channelresponse.ChannelResponsePreview',
+        'yasmine.NodeTypeEnum'
     ],
     listen: {
         controller: {
@@ -79,7 +79,7 @@ Ext.define('imct.view.xml.builder.parameter.ParameterListController', {
             return;
         }
 
-        var parameter = new imct.model.Parameter();
+        var parameter = new yasmine.model.Parameter();
         parameter.set('id', this.getSelectedRecord().get('id'));
         parameter.load({
             scope: this,
@@ -116,7 +116,7 @@ Ext.define('imct.view.xml.builder.parameter.ParameterListController', {
             return
         }
         var view = this.getView();
-        var parameter = new imct.model.Parameter({
+        var parameter = new yasmine.model.Parameter({
             id: null,
             'class': record.get('class'),
             attr_class: record.get('class'),
@@ -165,10 +165,10 @@ Ext.define('imct.view.xml.builder.parameter.ParameterListController', {
         }else{
             var nodeInstance = this.getViewModel().get('nodeInstance');
             var has_children = nodeInstance.get('has_children')
-            var commonAttrs = [imct.NodeAttrEnum.latitude, imct.NodeAttrEnum.longitude, imct.NodeAttrEnum.elevation, imct.NodeAttrEnum.start_date, imct.NodeAttrEnum.end_date]
+            var commonAttrs = [yasmine.NodeAttrEnum.latitude, yasmine.NodeAttrEnum.longitude, yasmine.NodeAttrEnum.elevation, yasmine.NodeAttrEnum.start_date, yasmine.NodeAttrEnum.end_date]
             var name = record.get('name');
             var nodeType = nodeInstance.get('nodeType')
-            if (has_children && commonAttrs.indexOf(name) >=0 && nodeType == imct.NodeTypeEnum.station){
+            if (has_children && commonAttrs.indexOf(name) >=0 && nodeType == yasmine.NodeTypeEnum.station){
                 this.showFormExt(context.record)
                 return false
             }
@@ -257,8 +257,8 @@ Ext.define('imct.view.xml.builder.parameter.ParameterListController', {
         }
 
         var result = preview.getPreview(record.get('value'));
-        if (imct.utils.CheckUtil.isEmpty(result)) {
-            return IMCT.Globals.NotApplicable;
+        if (yasmine.utils.CheckUtil.isEmpty(result)) {
+            return yasmine.Globals.NotApplicable;
         }
 
         if (result.tooltip) {

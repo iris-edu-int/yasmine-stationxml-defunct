@@ -10,4 +10,4 @@ build
 /debug.log
 *ghostdriver.log
 *debug.log
-/imct/static/js/imct/
+/yasmine/static/js/yasmine/

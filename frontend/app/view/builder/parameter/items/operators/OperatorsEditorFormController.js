@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditorFormController', {
+Ext.define('yasmine.view.xml.builder.parameter.items.operators.OperatorsEditorFormController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.operators-editor-form',
     id: 'operators-editor-form-controller', // Required for event listening
@@ -10,7 +10,7 @@ Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditorFormC
         if (agencies) {
             var store = this.getViewModel().getStore('agencyStore')
             agencies.forEach(function (item) {
-                var agency = new imct.view.xml.builder.parameter.items.operators.Agency();
+                var agency = new yasmine.view.xml.builder.parameter.items.operators.Agency();
                 agency.set('_name', item);
                 agency.modified = {};
                 store.insert(0, agency);
@@ -24,7 +24,7 @@ Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditorFormC
         }
     },
     onAddAgencyClick: function () {
-        var record = new imct.view.xml.builder.parameter.items.operators.Agency();
+        var record = new yasmine.view.xml.builder.parameter.items.operators.Agency();
         var store = this.getViewModel().getStore('agencyStore');
         store.insert(0, record);
 

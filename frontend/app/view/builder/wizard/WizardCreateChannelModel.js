@@ -1,7 +1,7 @@
-Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelModel', {
+Ext.define('yasmine.view.xml.builder.wizard.WizardCreateChannelModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.wizard-create-channel',
-    requires: ['imct.view.xml.builder.parameter.items.text.TextEditor'],
+    requires: ['yasmine.view.xml.builder.parameter.items.text.TextEditor'],
     data: {
         activeIndex: 0,
         lastStepIndex: 4,
@@ -15,7 +15,7 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelModel', {
     stores: {
         sensorStore: {
             type: 'tree',
-            model: 'imct.view.xml.builder.parameter.items.channelresponse.Response',
+            model: 'yasmine.view.xml.builder.parameter.items.channelresponse.Response',
             proxy: {
                 type: 'rest',
                 url: '/api/nrl/sensors/',
@@ -29,7 +29,7 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelModel', {
         },
         dataloggerStore: {
             type: 'tree',
-            model: 'imct.view.xml.builder.parameter.items.channelresponse.Response',
+            model: 'yasmine.view.xml.builder.parameter.items.channelresponse.Response',
             proxy: {
                 type: 'rest',
                 url: '/api/nrl/dataloggers/',
@@ -102,13 +102,13 @@ function makeChannelWizardConvert(name){
     return function defaultChannelWizardConvert (value){
         var name = name || this.name
         if (name == 'start_date'){
-            value = Ext.Date.parse(value, IMCT.Globals.DateReadFormat, true);
+            value = Ext.Date.parse(value, yasmine.Globals.DateReadFormat, true);
         }
         return new Ext.data.Model({
             name: name || this.name,
             value: value,
             only_critical: true,
-            node_id: imct.NodeTypeEnum.channel
+            node_id: yasmine.NodeTypeEnum.channel
         });
     }
 }
@@ -119,7 +119,7 @@ function defaultChannelWizardSerialize(value){
     } 
 }
 
-Ext.define('imct.view.xml.builder.wizard.ChannelCreation', {
+Ext.define('yasmine.view.xml.builder.wizard.ChannelCreation', {
     extend: 'Ext.data.Model',
     proxy: {
         type: 'rest',

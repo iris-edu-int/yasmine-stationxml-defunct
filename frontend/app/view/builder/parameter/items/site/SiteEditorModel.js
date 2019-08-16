@@ -1,5 +1,5 @@
-Ext.define('imct.view.xml.builder.parameter.items.site.SiteEditorModel', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorModel',
+Ext.define('yasmine.view.xml.builder.parameter.items.site.SiteEditorModel', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorModel',
     alias: 'viewmodel.site-editor',
     data: {
         name: null,

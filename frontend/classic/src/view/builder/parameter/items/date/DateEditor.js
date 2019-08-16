@@ -1,12 +1,12 @@
-Ext.define('imct.view.xml.builder.parameter.items.date.DateEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.date.DateEditor', {
     extend: 'Ext.form.field.Date',
-    xtype: 'imct-date-field',
-    requires: ['imct.view.xml.builder.parameter.items.date.DateEditorModel',
-            'imct.view.xml.builder.parameter.items.date.DateEditorController',
-            'imct.utils.DateUtil'],
+    xtype: 'yasmine-date-field',
+    requires: ['yasmine.view.xml.builder.parameter.items.date.DateEditorModel',
+            'yasmine.view.xml.builder.parameter.items.date.DateEditorController',
+            'yasmine.utils.DateUtil'],
     viewModel: 'date-editor',
     controller: 'date-editor',
-    format: IMCT.Globals.DatePrintLongFormat,
+    format: yasmine.Globals.DatePrintLongFormat,
     validateOnBlur: true,
     validateOnChange: true,
     validator: function(value){

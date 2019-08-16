@@ -1,11 +1,11 @@
-Ext.define('imct.view.xml.XmlList', {
+Ext.define('yasmine.view.xml.XmlList', {
     extend: 'Ext.grid.Panel',
     xtype: 'xml-list',
     requires: [
         'Ext.toolbar.Paging',
         'Ext.grid.filters.Filters',
-        'imct.view.xml.list.XmlListController',
-        'imct.view.xml.list.XmlListModel'
+        'yasmine.view.xml.list.XmlListController',
+        'yasmine.view.xml.list.XmlListModel'
     ],
     title: 'XML',
     frame: true,
@@ -34,8 +34,8 @@ Ext.define('imct.view.xml.XmlList', {
             { text: 'Module', dataIndex: 'module', filter: { type: 'list' }, flex: 3 },
             { text: 'Uri', dataIndex: 'uri', filter: { type: 'string' }, flex: 3 },
             { text: 'Sender', dataIndex: 'sender', filter: { type: 'string' } },
-            { text: 'Created at', dataIndex: 'created_at', xtype: 'datecolumn', filter: { type: 'date', dateFormat: IMCT.Globals.DatePrintLongFormat  }, format: IMCT.Globals.DatePrintLongFormat },
-            { text: 'Updated at', dataIndex: 'updated_at', xtype: 'datecolumn', filter: { type: 'date', dateFormat: IMCT.Globals.DatePrintLongFormat  }, format: IMCT.Globals.DatePrintLongFormat }
+            { text: 'Created at', dataIndex: 'created_at', xtype: 'datecolumn', filter: { type: 'date', dateFormat: yasmine.Globals.DatePrintLongFormat  }, format: yasmine.Globals.DatePrintLongFormat },
+            { text: 'Updated at', dataIndex: 'updated_at', xtype: 'datecolumn', filter: { type: 'date', dateFormat: yasmine.Globals.DatePrintLongFormat  }, format: yasmine.Globals.DatePrintLongFormat }
         ]
     },
     tbar: [{
@@ -92,7 +92,7 @@ Ext.define('imct.view.xml.XmlList', {
     tools:[
         {
             type:'help',
-            handler: function() { imct.utils.HelpUtil.helpMe('xml_list', 'List of XMLs') }
+            handler: function() { yasmine.utils.HelpUtil.helpMe('xml_list', 'List of XMLs') }
         }
     ]
 });

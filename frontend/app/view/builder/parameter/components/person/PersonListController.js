@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.components.person.PersonListController', {
+Ext.define('yasmine.view.xml.builder.parameter.components.person.PersonListController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.person-list',
     listen: {
@@ -15,7 +15,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonListControll
 
         var that = this;
         persons.forEach(function (item) {
-            var record = new imct.view.xml.builder.parameter.components.person.Person();
+            var record = new yasmine.view.xml.builder.parameter.components.person.Person();
             if (item._names) {
                 record.set('_names', item._names.map(function (item) { return { _name: item }; }));
             }
@@ -49,7 +49,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonListControll
         store.insert(0, person);
     },
     onAddClick: function () {
-        this.showForm(new imct.view.xml.builder.parameter.components.person.Person());
+        this.showForm(new yasmine.view.xml.builder.parameter.components.person.Person());
     },
     onDeleteClick: function () {
         Ext.MessageBox.confirm('Confirm', `Are you sure you want to delete?`, function (btn) {

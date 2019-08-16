@@ -52,11 +52,11 @@ import_submodules = (
 for submod in import_submodules:
 	_hiddenimports += collect_submodules(submod)
 
-_datas=collect_data_files('imct')
+_datas=collect_data_files('yasmine')
 _datas.append( ('/usr/local/lib/python3.6/site-packages/obspy/imaging/data/*.*','site-packages/obspy/imaging/data') )
 
-a = Analysis(['imctapp.py'],
-             pathex=['/opt/IMCT/backend'],
+a = Analysis(['yasmine.py'],
+             pathex=['/opt/yasmine/backend'],
              binaries=[],
              datas=_datas,
              hiddenimports=_hiddenimports,
@@ -74,7 +74,7 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='imctapp',
+          name='yasmine',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -86,5 +86,5 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='imctapp')
+               name='yasmine')
 

@@ -1,6 +1,6 @@
 {
-    "name": "imct",
-    "namespace": "imct",
+    "name": "yasmine",
+    "namespace": "yasmine",
     "version": "1.0.0",
     "framework": "ext",
 
@@ -66,13 +66,13 @@
     "sass": {
         /**
          * The root namespace to use when mapping *.scss files to classes in the
-         * sass/src and sass/var directories. For example, "imct.view.Foo" would
-         * map to "sass/src/view/Foo.scss". If we changed this to "imct.view" then
+         * sass/src and sass/var directories. For example, "yasmine.view.Foo" would
+         * map to "sass/src/view/Foo.scss". If we changed this to "yasmine.view" then
          * it would map to "sass/src/Foo.scss". To style classes outside the app's
          * root namespace, change this to "". Doing so would change the mapping of
-         * "imct.view.Foo" to "sass/src/imct/view/Foo.scss".
+         * "yasmine.view.Foo" to "sass/src/yasmine/view/Foo.scss".
          */
-        "namespace": "imct",
+        "namespace": "yasmine",
 
         /**
          * Generated sass source settings
@@ -304,7 +304,7 @@
 				"path": "../../../templates/index.html",
 				"enable": false
 			},            
-            "base": "${workspace.build.dir}/../../backend/imct/static/js/imct",
+            "base": "${workspace.build.dir}/../../backend/yasmine/static/js/yasmine",
 		 	"microloader": {
 				"path": "microloader.js",
 				"embed": false,

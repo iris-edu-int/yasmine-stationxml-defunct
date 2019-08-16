@@ -1,5 +1,5 @@
-Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditorController', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorController',
+Ext.define('yasmine.view.xml.builder.parameter.items.operators.OperatorsEditorController', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorController',
     alias: 'controller.operators-editor',
     listen: {
         controller: {
@@ -16,7 +16,7 @@ Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditorContr
 
         var store = this.getViewModel().getStore('operatorStore');
         value.forEach(function(item){
-            var operator = new imct.view.xml.builder.parameter.items.operators.Operator();
+            var operator = new yasmine.view.xml.builder.parameter.items.operators.Operator();
             operator.set('website', item.website)
             operator.set('agencies', item._agencies)
             operator.set('contacts', item._contacts)
@@ -43,7 +43,7 @@ Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditorContr
         store.insert(0, record);
     },
     onAddClick: function () {
-        this.showEditForm(new imct.view.xml.builder.parameter.items.operators.Operator());
+        this.showEditForm(new yasmine.view.xml.builder.parameter.items.operators.Operator());
     },
     onEditClick: function () {
         this.showEditForm(this.getSelectedRecord());

@@ -1,25 +1,25 @@
 version: '3'
 services:
-    imct-frontend:
+    yasmine-frontend:
         build: frontend
-        image: imct/frontend
-        container_name: imct-frontend
+        image: yasmine/frontend
+        container_name: yasmine-frontend
         volumes:
             - ./:/code
         ports:
             - "1841:1841"   
         links:
-            - imct-backend
-    imct-backend:
+            - yasmine-backend
+    yasmine-backend:
         ports:
             - "80:80"
         build: backend
-        image: imct/backend
-        container_name: imct-backend
+        image: yasmine/backend
+        container_name: yasmine-backend
         stdin_open: true
         tty: true        
         volumes:
-            - IMCT:/opt/IMCT
-            - ./backend:/opt/IMCT/src               
+            - yasmine:/opt/yasmine
+            - ./backend:/opt/yasmine/src               
 volumes:
-  IMCT:
+  yasmine:

@@ -1,4 +1,4 @@
-Ext.define('imct.ChannelOrient', {
+Ext.define('yasmine.ChannelOrient', {
     singleton: true,
 
     ZNE: 1,

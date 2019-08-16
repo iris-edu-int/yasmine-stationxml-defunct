@@ -1,4 +1,4 @@
-Ext.define('imct.view.settings.SettingsListModel', {
+Ext.define('yasmine.view.settings.SettingsListModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.settings',
     data: {
@@ -9,7 +9,7 @@ Ext.define('imct.view.settings.SettingsListModel', {
             autoLoad: true,
             proxy: {
                 type: 'rest',
-                url: `/api/attr/${imct.NodeTypeEnum.network}`,
+                url: `/api/attr/${yasmine.NodeTypeEnum.network}`,
                 paramsAsJson: true
             }
         },
@@ -17,7 +17,7 @@ Ext.define('imct.view.settings.SettingsListModel', {
             autoLoad: true,
             proxy: {
                 type: 'rest',
-                url: `/api/attr/${imct.NodeTypeEnum.station}`,
+                url: `/api/attr/${yasmine.NodeTypeEnum.station}`,
                 paramsAsJson: true
             }
         },
@@ -25,14 +25,14 @@ Ext.define('imct.view.settings.SettingsListModel', {
             autoLoad: true,
             proxy: {
                 type: 'rest',
-                url: `/api/attr/${imct.NodeTypeEnum.channel}`,
+                url: `/api/attr/${yasmine.NodeTypeEnum.channel}`,
                 paramsAsJson: true
             }
         }
     }
 });
 
-Ext.define('imct.view.settings.Settings', {
+Ext.define('yasmine.view.settings.Settings', {
     extend: 'Ext.data.Model',
     proxy: {
         type: 'rest',

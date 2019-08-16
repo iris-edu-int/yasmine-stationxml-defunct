@@ -1,8 +1,8 @@
-Ext.define('imct.view.main.MainModel', {
+Ext.define('yasmine.view.main.MainModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.main',
     data: {
-        name: 'IMCT'
+        name: 'yasmine'
     },
     formulas: {
         version: function (get) {

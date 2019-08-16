@@ -1,4 +1,4 @@
-Ext.define('imct.NodeAttrEnum', {
+Ext.define('yasmine.NodeAttrEnum', {
     singleton: true,
     latitude: 'latitude',
     longitude: 'longitude',

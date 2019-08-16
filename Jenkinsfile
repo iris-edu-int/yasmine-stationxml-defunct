@@ -9,7 +9,7 @@ pipeline {
                     doGenerateSubmoduleConfigurations: false, 
                     extensions: [], 
                     submoduleCfg: [], 
-                    userRemoteConfigs: [[name: 'twister', url: 'https://github.com/iris-edu-int/twister-imct-editor.git']]]
+                    userRemoteConfigs: [[name: 'yasmine', url: 'https://github.com/iris-edu-int/yasmine-stationxml-editor.git']]]
                 )
                 stash includes: '**/*', name: 'app_src'
             }
@@ -39,13 +39,13 @@ pipeline {
                         sh "sudo docker build -t frontend-test -f frontend/Dockerfile.jenkins ./frontend"
                         sh "sudo docker build -t backend-test -f backend/Dockerfile.jenkins ./backend"
 			try {
-				sh "chmod -fR 777 . frontend backend | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT frontend-test bash"
+				sh "chmod -fR 777 . frontend backend | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/yasmine:/opt/yasmine frontend-test bash"
 			} catch (err) {
 				echo err.getMessage()
 				echo "Error detected on frontend chmod, but we will continue."
 			}
-			sh "echo 'cd /opt/IMCT/frontend; sencha app build' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT frontend-test bash"
-                        sh "echo 'cd /opt/IMCT/backend; python setup.py sdist; pyinstaller -y pyinstaller.spec' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/Twister-IMCT:/opt/IMCT backend-test bash"
+			sh "echo 'cd /opt/yasmine/frontend; sencha app build' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/yasmine:/opt/yasmine frontend-test bash"
+                        sh "echo 'cd /opt/yasmine/backend; python setup.py sdist; pyinstaller -y pyinstaller.spec' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/yasmine:/opt/yasmine backend-test bash"
                     }
                 }
             }

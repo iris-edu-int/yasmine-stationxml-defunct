@@ -3,22 +3,22 @@
  * when it calls Ext.application(). This is the ideal place to handle
  * application launch and initialization details.
  */
-Ext.ns('IMCT.Globals');
-IMCT.Globals.NotApplicable = 'N/A';
-IMCT.Globals.DatePrintLongFormat = 'Y-m-d H:i:s';
-IMCT.Globals.DatePrintShortFormat = 'Y-m-d';
-IMCT.Globals.DateReadFormat = 'd/m/Y H:i:s';
-IMCT.Globals.Settings = null;
-IMCT.Globals.LocationColorScale = null; // Very ugly solution. TODO: find a better way to implement it
+Ext.ns('yasmine.Globals');
+yasmine.Globals.NotApplicable = 'N/A';
+yasmine.Globals.DatePrintLongFormat = 'Y-m-d H:i:s';
+yasmine.Globals.DatePrintShortFormat = 'Y-m-d';
+yasmine.Globals.DateReadFormat = 'd/m/Y H:i:s';
+yasmine.Globals.Settings = null;
+yasmine.Globals.LocationColorScale = null; // Very ugly solution. TODO: find a better way to implement it
 
 Ext.util.JSON.encodeDate = function (o){
-    return '"' + Ext.Date.format(o, IMCT.Globals.DateReadFormat) + '"'
+    return '"' + Ext.Date.format(o, yasmine.Globals.DateReadFormat) + '"'
 }
 
-Ext.define('imct.Application', {
+Ext.define('yasmine.Application', {
     extend: 'Ext.app.Application',
-    name: 'imct',
-    requires: ['Ext.grid.plugin.RowEditing','imct.view.settings.Settings','imct.utils.SettingsUtil'],
+    name: 'yasmine',
+    requires: ['Ext.grid.plugin.RowEditing','yasmine.view.settings.Settings','yasmine.utils.SettingsUtil'],
     quickTips: false,
     platformConfig: {
         desktop: {
@@ -76,10 +76,10 @@ Ext.define('imct.Application', {
                 Ext.getBody().unmask();
             }
         }, this);
-        imct.view.settings.Settings.load(0, {
+        yasmine.view.settings.Settings.load(0, {
             scope: this,
             success: function (record, operation){
-                imct.utils.SettingsUtil.applySettings(record);
+                yasmine.utils.SettingsUtil.applySettings(record);
             }
         });
     },

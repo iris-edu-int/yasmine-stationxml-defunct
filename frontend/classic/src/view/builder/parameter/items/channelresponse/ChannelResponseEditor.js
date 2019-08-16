@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditor', {
     extend: 'Ext.panel.Panel',
-    xtype: 'imct-channel-response-field',
-    requires: ['imct.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditorModel',
-        'imct.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditorController'],
+    xtype: 'yasmine-channel-response-field',
+    requires: ['yasmine.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditorModel',
+        'yasmine.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditorController'],
     viewModel: 'channel-response-editor',
     controller: 'channel-response-editor',
     width: 1000,

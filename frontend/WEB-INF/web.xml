@@ -12,11 +12,11 @@
         <servlet-class>org.eclipse.jetty.servlets.ProxyServlet$Transparent</servlet-class>
         <init-param>
             <param-name>ProxyTo</param-name>
-            <param-value>http://imct-backend:80/api</param-value>
+            <param-value>http://yasmine-backend:80/api</param-value>
         </init-param>
         <init-param>
             <param-name>HostHeader</param-name>
-            <param-value>imct-backend:80</param-value>
+            <param-value>yasmine-backend:80</param-value>
         </init-param>
         <init-param>
             <param-name>Prefix</param-name>

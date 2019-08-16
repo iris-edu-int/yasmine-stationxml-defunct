@@ -1,10 +1,10 @@
-Ext.define('imct.view.xml.XmlEdit', {
+Ext.define('yasmine.view.xml.XmlEdit', {
     extend: 'Ext.window.Window',
     xtype: 'xml-edit',
     requires: [
         'Ext.form.Panel',
-        'imct.view.xml.edit.XmlEditController',
-        'imct.view.xml.edit.XmlEditModel',
+        'yasmine.view.xml.edit.XmlEditController',
+        'yasmine.view.xml.edit.XmlEditModel',
         'Ext.form.field.VTypes',
         'Ext.data.validator.Presence'
     ],
@@ -41,7 +41,7 @@ Ext.define('imct.view.xml.XmlEdit', {
     tools:[
         {
             type:'help',
-            handler: function() { imct.utils.HelpUtil.helpMe('xml_edit', 'Edit XML') }
+            handler: function() { yasmine.utils.HelpUtil.helpMe('xml_edit', 'Edit XML') }
         }
     ]
 });

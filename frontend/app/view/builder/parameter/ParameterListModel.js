@@ -1,7 +1,7 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterListModel', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterListModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.parameter-list',
-    requires: ['imct.model.Parameter','imct.NodeTypeEnum'],
+    requires: ['yasmine.model.Parameter','yasmine.NodeTypeEnum'],
     data: {
         nodeId: null,
         nodeType: null,
@@ -10,7 +10,7 @@ Ext.define('imct.view.xml.builder.parameter.ParameterListModel', {
     },
     stores: {
         infoStore: {
-            model: 'imct.model.Parameter',
+            model: 'yasmine.model.Parameter',
             pageSize: 0,
             autoLoad: false,
             autoSync: false,
@@ -47,13 +47,13 @@ Ext.define('imct.view.xml.builder.parameter.ParameterListModel', {
     formulas: {
         title: function (get){
             var type = get('nodeType');
-            if (type === imct.NodeTypeEnum.network) {
+            if (type === yasmine.NodeTypeEnum.network) {
                 return 'Network Information';
             }
-            if (type === imct.NodeTypeEnum.station) {
+            if (type === yasmine.NodeTypeEnum.station) {
                 return 'Station Information';
             }
-            if (type === imct.NodeTypeEnum.channel) {
+            if (type === yasmine.NodeTypeEnum.channel) {
                 return 'Channel Information';
             }
             return 'Please select a node';

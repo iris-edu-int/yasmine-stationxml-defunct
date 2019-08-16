@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterEditorModel', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterEditorModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.parameter-editor',
     data: {

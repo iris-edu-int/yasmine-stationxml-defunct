@@ -1,10 +1,10 @@
-Ext.define('imct.view.xml.list.XmlListController', {
+Ext.define('yasmine.view.xml.list.XmlListController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.xml-list',
     requires: [
-        'imct.view.xml.XmlEdit',
-        'imct.view.xml.XmlImport',
-        'imct.model.Xml'
+        'yasmine.view.xml.XmlEdit',
+        'yasmine.view.xml.XmlImport',
+        'yasmine.model.Xml'
     ],
     listen: {
         controller: {
@@ -18,17 +18,17 @@ Ext.define('imct.view.xml.list.XmlListController', {
     },
     onCreateXmlClick: function () {
         var form = Ext.create({ xtype: 'xml-edit' });
-        var record = new imct.model.Xml();
-        record.set('source', IMCT.Globals.Settings.general__source);
-        record.set('module', IMCT.Globals.Settings.general__module);
-        record.set('uri', IMCT.Globals.Settings.general__uri);
+        var record = new yasmine.model.Xml();
+        record.set('source', yasmine.Globals.Settings.general__source);
+        record.set('module', yasmine.Globals.Settings.general__module);
+        record.set('uri', yasmine.Globals.Settings.general__uri);
         
         form.getViewModel().set('model', record);
         form.show();
     },
     onEditXmlClick: function() {
         var form = Ext.create({ xtype: 'xml-edit' });
-        form.getViewModel().set('model', imct.model.Xml.load(this.getSelectedRecord().id));
+        form.getViewModel().set('model', yasmine.model.Xml.load(this.getSelectedRecord().id));
         form.show();
     },
     onDeleteXmlClick: function() {
@@ -49,7 +49,7 @@ Ext.define('imct.view.xml.list.XmlListController', {
         form.show();
     },
     onExportXmlClick: function() {
-        imct.store.FileLoader.load(`api/xml/ie/${this.getSelectedRecord().id}`);
+        yasmine.store.FileLoader.load(`api/xml/ie/${this.getSelectedRecord().id}`);
     },
     onXmlSaved: function() {
         this.reloadData();

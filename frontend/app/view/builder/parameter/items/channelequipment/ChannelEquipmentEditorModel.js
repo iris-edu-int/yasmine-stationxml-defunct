@@ -1,5 +1,5 @@
-Ext.define('imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditorModel', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorModel',
+Ext.define('yasmine.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditorModel', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorModel',
     alias: 'viewmodel.channel-equipment-editor',
     data: {
         selectedCalibrationDateRow: null,
@@ -15,13 +15,13 @@ Ext.define('imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipm
     },
     stores: {
         calibrationDateStore: {
-            model: 'imct.view.xml.builder.parameter.items.channelequipment.CalibrationDate',
+            model: 'yasmine.view.xml.builder.parameter.items.channelequipment.CalibrationDate',
             data: []
         }
     }
 });
 
-Ext.define('imct.view.xml.builder.parameter.items.channelequipment.CalibrationDate', {
+Ext.define('yasmine.view.xml.builder.parameter.items.channelequipment.CalibrationDate', {
     extend: 'Ext.data.Model',
     fields: [
         { name: 'value', type: 'date' }

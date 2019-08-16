@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditor', {
     extend: 'Ext.form.Panel',
-    xtype: 'imct-external-references-field',
-    requires: ['imct.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditorModel',
-        'imct.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditorController'],
+    xtype: 'yasmine-external-references-field',
+    requires: ['yasmine.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditorModel',
+        'yasmine.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditorController'],
     viewModel: 'external-references-editor',
     controller: 'external-references-editor',
     border: true,

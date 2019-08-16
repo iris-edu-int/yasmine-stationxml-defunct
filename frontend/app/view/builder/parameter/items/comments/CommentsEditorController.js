@@ -1,5 +1,5 @@
-Ext.define('imct.view.xml.builder.parameter.items.comments.CommentsEditorController', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorController',
+Ext.define('yasmine.view.xml.builder.parameter.items.comments.CommentsEditorController', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorController',
     alias: 'controller.comments-editor',
     listen: {
         controller: {
@@ -16,7 +16,7 @@ Ext.define('imct.view.xml.builder.parameter.items.comments.CommentsEditorControl
 
         var store = this.getViewModel().getStore('commentStore');
         value.forEach(function (item) {
-            var comment = new imct.view.xml.builder.parameter.items.comments.Comment();
+            var comment = new yasmine.view.xml.builder.parameter.items.comments.Comment();
             comment.set('_id', item._id)
             comment.set('_value', item._value)
             comment.set('_begin_effective_time', item._begin_effective_time)
@@ -47,7 +47,7 @@ Ext.define('imct.view.xml.builder.parameter.items.comments.CommentsEditorControl
         store.insert(0, record);
     },
     onAddClick: function () {
-        this.showEditForm(new imct.view.xml.builder.parameter.items.comments.Comment());
+        this.showEditForm(new yasmine.view.xml.builder.parameter.items.comments.Comment());
     },
     onEditClick: function () {
         this.showEditForm(this.getSelectedRecord());

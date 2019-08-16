@@ -1,7 +1,7 @@
-Ext.define('imct.view.xml.builder.parameter.items.latitude.LatitudeEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.latitude.LatitudeEditor', {
     extend: 'Ext.form.field.Number',
-    xtype: 'imct-latitude-field',
-    requires: ['imct.view.xml.builder.parameter.items.latitude.LatitudeEditorController','imct.view.xml.builder.parameter.items.latitude.LatitudeEditorModel'],
+    xtype: 'yasmine-latitude-field',
+    requires: ['yasmine.view.xml.builder.parameter.items.latitude.LatitudeEditorController','yasmine.view.xml.builder.parameter.items.latitude.LatitudeEditorModel'],
     viewModel: 'latitude-editor',
     controller: 'latitude-editor',
     decimalPrecision: 6,     

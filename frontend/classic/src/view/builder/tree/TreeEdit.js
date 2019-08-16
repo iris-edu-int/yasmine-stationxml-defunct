@@ -1,10 +1,10 @@
-Ext.define('imct.view.xml.builder.tree.TreeEdit', {
+Ext.define('yasmine.view.xml.builder.tree.TreeEdit', {
     extend: 'Ext.window.Window',
     xtype: 'tree-edit',
     requires: [
         'Ext.form.Panel',
-        'imct.view.xml.builder.tree.edit.TreeEditController',
-        'imct.view.xml.builder.tree.edit.TreeEditModel'
+        'yasmine.view.xml.builder.tree.edit.TreeEditController',
+        'yasmine.view.xml.builder.tree.edit.TreeEditModel'
     ],
     controller: 'tree-edit',
     viewModel: 'tree-edit',

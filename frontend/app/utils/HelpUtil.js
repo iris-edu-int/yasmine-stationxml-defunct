@@ -1,15 +1,15 @@
-Ext.define("imct.utils.HelpUtil", {
+Ext.define("yasmine.utils.HelpUtil", {
     singleton: true,
     helpMe: function (helpId, helpTitle = 'Help panel') {
         var title = `Help: '${helpTitle}'`;
-    	imct.help.HelpModel.load(helpId, {
+    	yasmine.help.HelpModel.load(helpId, {
 			success: function(record, operation){
 				var main_help = Ext.ComponentQuery.query('main_help');
 				if (main_help.length>0){
 					main_help[0].getViewModel().set('record', record)
 					main_help[0].setTitle(title)
 				}else{
-			   		Ext.create('imct.help.Help',{
+			   		Ext.create('yasmine.help.Help',{
 			   			title: title,
 			   			viewModel:{
 			   				type: 'main_help',
@@ -25,7 +25,7 @@ Ext.define("imct.utils.HelpUtil", {
 });
 
 
-Ext.define('imct.help.HTMLEditor',{
+Ext.define('yasmine.help.HTMLEditor',{
 	extend: 'Ext.form.field.HtmlEditor',
 	alias: 'widget.help_html_editor',
 	getToolbarCfg: function(){
@@ -55,7 +55,7 @@ Ext.define('imct.help.HTMLEditor',{
     }    
 })
 
-Ext.define('imct.help.HelpModel', {
+Ext.define('yasmine.help.HelpModel', {
     extend: 'Ext.data.Model',
     fields: ['key', 'content'],
     idProperty: 'id',
@@ -68,17 +68,17 @@ Ext.define('imct.help.HelpModel', {
     }
 });
 
-Ext.define('imct.help.HelpViewModel', {
+Ext.define('yasmine.help.HelpViewModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.main_help'
 })
 
-Ext.define('imct.help.HelpController', {
+Ext.define('yasmine.help.HelpController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main_help'    
 })
 
-Ext.define('imct.help.Help', {
+Ext.define('yasmine.help.Help', {
     extend: 'Ext.window.Window',
     alias: 'widget.main_help',
     viewModel: 'main_help',

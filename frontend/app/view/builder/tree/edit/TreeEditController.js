@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.tree.edit.TreeEditController', {
+Ext.define('yasmine.view.xml.builder.tree.edit.TreeEditController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.tree-edit',
     id: 'tree-edit-controller', // Required for event listening

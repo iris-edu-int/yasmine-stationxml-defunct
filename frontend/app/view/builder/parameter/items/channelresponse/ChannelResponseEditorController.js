@@ -1,5 +1,5 @@
-Ext.define('imct.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditorController', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorController',
+Ext.define('yasmine.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditorController', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorController',
     alias: 'controller.channel-response-editor',
     initData: function () {
         var record = this.getViewModel().get('record');

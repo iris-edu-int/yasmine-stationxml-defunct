@@ -1,7 +1,7 @@
-Ext.define('imct.view.xml.builder.parameter.items.text.TextEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.text.TextEditor', {
     extend: 'Ext.form.field.Text',
-    xtype: 'imct-text-field',
-    requires: ['imct.view.xml.builder.parameter.items.text.TextEditorModel','imct.view.xml.builder.parameter.items.text.TextEditorController'],
+    xtype: 'yasmine-text-field',
+    requires: ['yasmine.view.xml.builder.parameter.items.text.TextEditorModel','yasmine.view.xml.builder.parameter.items.text.TextEditorController'],
     viewModel: 'text-editor',
     controller: 'text-editor',
     validateOnBlur: true,

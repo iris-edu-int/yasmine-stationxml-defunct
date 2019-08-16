@@ -1,21 +1,21 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterEditorController', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterEditorController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.parameter-editor',
     requires: [
-        'imct.view.xml.builder.parameter.items.text.TextEditor',
-        'imct.view.xml.builder.parameter.items.int.IntEditor',
-        'imct.view.xml.builder.parameter.items.float.FloatEditor',
-        'imct.view.xml.builder.parameter.items.latitude.LatitudeEditor',
-        'imct.view.xml.builder.parameter.items.longitude.LongitudeEditor',
-        'imct.view.xml.builder.parameter.items.date.DateEditor',
-        'imct.view.xml.builder.parameter.items.site.SiteEditor',
-        'imct.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditor',
-        'imct.view.xml.builder.parameter.items.comments.CommentsEditor',
-        'imct.view.xml.builder.parameter.items.operators.OperatorsEditor',
-        'imct.view.xml.builder.parameter.items.operators.OperatorsEditorForm',
-        'imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditor',
-        'imct.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditor',
-        'imct.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditor'
+        'yasmine.view.xml.builder.parameter.items.text.TextEditor',
+        'yasmine.view.xml.builder.parameter.items.int.IntEditor',
+        'yasmine.view.xml.builder.parameter.items.float.FloatEditor',
+        'yasmine.view.xml.builder.parameter.items.latitude.LatitudeEditor',
+        'yasmine.view.xml.builder.parameter.items.longitude.LongitudeEditor',
+        'yasmine.view.xml.builder.parameter.items.date.DateEditor',
+        'yasmine.view.xml.builder.parameter.items.site.SiteEditor',
+        'yasmine.view.xml.builder.parameter.items.externalreferences.ExternalReferencesEditor',
+        'yasmine.view.xml.builder.parameter.items.comments.CommentsEditor',
+        'yasmine.view.xml.builder.parameter.items.operators.OperatorsEditor',
+        'yasmine.view.xml.builder.parameter.items.operators.OperatorsEditorForm',
+        'yasmine.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditor',
+        'yasmine.view.xml.builder.parameter.items.channeltypes.ChannelTypesEditor',
+        'yasmine.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditor'
     ],
     createFrom: function () {
         var record = this.getViewModel().get('record');
@@ -58,8 +58,8 @@ Ext.define('imct.view.xml.builder.parameter.ParameterEditorController', {
     },
     onHelpClick: function () {
         var record = this.getViewModel().get('record');
-        var nodeTypeString = imct.utils.NodeTypeConverter.toString(this.getViewModel().get('nodeType'));
+        var nodeTypeString = yasmine.utils.NodeTypeConverter.toString(this.getViewModel().get('nodeType'));
         var nodeTypeId = nodeTypeString.toLowerCase();
-        imct.utils.HelpUtil.helpMe(`parameter_${nodeTypeId}_${record.get('name')}`, `${nodeTypeString} ${record.get('name')}`);
+        yasmine.utils.HelpUtil.helpMe(`parameter_${nodeTypeId}_${record.get('name')}`, `${nodeTypeString} ${record.get('name')}`);
     }
 });

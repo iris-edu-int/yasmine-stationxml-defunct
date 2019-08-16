@@ -1,13 +1,13 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterEditorControllerExt', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterEditorControllerExt', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.parameter-editor-ext',
     requires: [
-        'imct.view.xml.builder.parameter.items.text.TextEditor',
-        'imct.view.xml.builder.parameter.items.int.IntEditor',
-        'imct.view.xml.builder.parameter.items.float.FloatEditor',
-        'imct.view.xml.builder.parameter.items.latitude.LatitudeEditor',
-        'imct.view.xml.builder.parameter.items.longitude.LongitudeEditor',
-        'imct.view.xml.builder.parameter.items.date.DateEditor'
+        'yasmine.view.xml.builder.parameter.items.text.TextEditor',
+        'yasmine.view.xml.builder.parameter.items.int.IntEditor',
+        'yasmine.view.xml.builder.parameter.items.float.FloatEditor',
+        'yasmine.view.xml.builder.parameter.items.latitude.LatitudeEditor',
+        'yasmine.view.xml.builder.parameter.items.longitude.LongitudeEditor',
+        'yasmine.view.xml.builder.parameter.items.date.DateEditor'
     ],
     createFrom: function () {
         var record = this.getViewModel().get('record');
@@ -20,7 +20,7 @@ Ext.define('imct.view.xml.builder.parameter.ParameterEditorControllerExt', {
         this.getView().down('form').insert(0, content);
         content.getViewModel().set('record', record);
         
-        this.getViewModel().set('station__spread_to_channels', IMCT.Globals.Settings.station__spread_to_channels)
+        this.getViewModel().set('station__spread_to_channels', yasmine.Globals.Settings.station__spread_to_channels)
         content.getViewModel().set('nodeType', this.getViewModel().get('nodeType'));
     },
     onSaveClick: function () {
@@ -54,8 +54,8 @@ Ext.define('imct.view.xml.builder.parameter.ParameterEditorControllerExt', {
     },
     onHelpClick: function () {
         var record = this.getViewModel().get('record');
-        var nodeTypeString = imct.utils.NodeTypeConverter.toString(this.getViewModel().get('nodeType'));
+        var nodeTypeString = yasmine.utils.NodeTypeConverter.toString(this.getViewModel().get('nodeType'));
         var nodeTypeId = nodeTypeString.toLowerCase();
-        imct.utils.HelpUtil.helpMe(`parameter_${nodeTypeId}_${record.get('name')}`, `${nodeTypeString} ${record.get('name')}`);
+        yasmine.utils.HelpUtil.helpMe(`parameter_${nodeTypeId}_${record.get('name')}`, `${nodeTypeString} ${record.get('name')}`);
     }
 });

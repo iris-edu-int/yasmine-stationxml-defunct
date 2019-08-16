@@ -1,5 +1,5 @@
-Ext.define('imct.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditorModel', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorModel',
+Ext.define('yasmine.view.xml.builder.parameter.items.channelresponse.ChannelResponseEditorModel', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorModel',
     alias: 'viewmodel.channel-response-editor',
     data: {
         sensorSelection: null,
@@ -14,7 +14,7 @@ Ext.define('imct.view.xml.builder.parameter.items.channelresponse.ChannelRespons
     stores: {
         sensorStore: {
             type: 'tree',
-            model: 'imct.view.xml.builder.parameter.items.channelresponse.Response',
+            model: 'yasmine.view.xml.builder.parameter.items.channelresponse.Response',
             proxy: {
                 type: 'rest',
                 url: '/api/nrl/sensors/',
@@ -28,7 +28,7 @@ Ext.define('imct.view.xml.builder.parameter.items.channelresponse.ChannelRespons
         },
         dataloggerStore: {
             type: 'tree',
-            model: 'imct.view.xml.builder.parameter.items.channelresponse.Response',
+            model: 'yasmine.view.xml.builder.parameter.items.channelresponse.Response',
             proxy: {
                 type: 'rest',
                 url: '/api/nrl/dataloggers/',
@@ -49,7 +49,7 @@ Ext.define('imct.view.xml.builder.parameter.items.channelresponse.ChannelRespons
 });
 
 
-Ext.define('imct.view.xml.builder.parameter.items.channelresponse.Response', {
+Ext.define('yasmine.view.xml.builder.parameter.items.channelresponse.Response', {
     extend: 'Ext.data.TreeModel',
     fields: [
         { name: 'text', type: 'string', persist: false },

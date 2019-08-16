@@ -1,4 +1,4 @@
-Ext.define("imct.store.FileLoader", {
+Ext.define("yasmine.store.FileLoader", {
     singleton : true,
     load : function(url) {
         Ext.Ajax.request({

@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.operators.OperatorsEditor', {
     extend: 'Ext.form.Panel',
-    xtype: 'imct-operators-field',
+    xtype: 'yasmine-operators-field',
     requires: [
-        'imct.view.xml.builder.parameter.items.operators.OperatorsEditorModel',
-        'imct.view.xml.builder.parameter.items.operators.OperatorsEditorController'
+        'yasmine.view.xml.builder.parameter.items.operators.OperatorsEditorModel',
+        'yasmine.view.xml.builder.parameter.items.operators.OperatorsEditorController'
     ],
     viewModel: 'operators-editor',
     controller: 'operators-editor',
@@ -33,7 +33,7 @@ Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditor', {
                     flex: 1,
                     renderer: function (value) {
                         if (!value || value.length === 0) {
-                            return IMCT.Globals.NotApplicable;
+                            return yasmine.Globals.NotApplicable;
                         }
 
                         return value.map(function (item) { return item }).join('; ');
@@ -45,7 +45,7 @@ Ext.define('imct.view.xml.builder.parameter.items.operators.OperatorsEditor', {
                     flex: 1,
                     renderer: function (value) {
                         if (!value || value.length === 0) {
-                            return IMCT.Globals.NotApplicable;
+                            return yasmine.Globals.NotApplicable;
                         }
 
                         var result = [];

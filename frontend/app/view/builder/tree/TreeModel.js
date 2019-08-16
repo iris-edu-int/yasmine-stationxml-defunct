@@ -1,9 +1,9 @@
-Ext.define('imct.view.xml.builder.tree.TreeModel', {
+Ext.define('yasmine.view.xml.builder.tree.TreeModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.tree',
     requires: [
         'Ext.data.TreeStore',
-        'imct.model.TreeItem'
+        'yasmine.model.TreeItem'
     ],
     data: {
         current: {
@@ -26,7 +26,7 @@ Ext.define('imct.view.xml.builder.tree.TreeModel', {
                     value: '{current.epoch}',
                     serializer: function (filter) {
                         if (filter.value) {
-                            filter.value = Ext.Date.format(filter.value.get('date'), IMCT.Globals.DateReadFormat);
+                            filter.value = Ext.Date.format(filter.value.get('date'), yasmine.Globals.DateReadFormat);
                         }
                     }
                 }
@@ -38,10 +38,10 @@ Ext.define('imct.view.xml.builder.tree.TreeModel', {
                 text: "Inventory",
                 expanded: true
             },
-            model: 'imct.model.TreeItem'
+            model: 'yasmine.model.TreeItem'
         },
         dateStore: {
-            model: 'imct.view.xml.builder.tree.Date',
+            model: 'yasmine.view.xml.builder.tree.Date',
             autoLoad: true,
             proxy: {
                 type: 'rest',
@@ -55,7 +55,7 @@ Ext.define('imct.view.xml.builder.tree.TreeModel', {
     },
     formulas: {
         canCreate: function (get) {
-            return !get('current.item') || get('current.item').get('nodeType') !== imct.NodeTypeEnum.channel;
+            return !get('current.item') || get('current.item').get('nodeType') !== yasmine.NodeTypeEnum.channel;
         },
         canDelete: function (get) {
             return get('current.item') && !get('current.item').get('root');
@@ -66,10 +66,10 @@ Ext.define('imct.view.xml.builder.tree.TreeModel', {
     }
 });
 
-Ext.define('imct.view.xml.builder.tree.Date', {
+Ext.define('yasmine.view.xml.builder.tree.Date', {
     extend: 'Ext.data.Model',
     fields: [
-        { name: 'date', type: 'date', persist: false, dateFormat: IMCT.Globals.DateReadFormat },
+        { name: 'date', type: 'date', persist: false, dateFormat: yasmine.Globals.DateReadFormat },
         {
             name: 'dateString',
             type: 'string',
@@ -78,7 +78,7 @@ Ext.define('imct.view.xml.builder.tree.Date', {
             convert: function (value, record) {
                 var date = record.get('date');
                 if (date) {
-                    return Ext.Date.format(date, IMCT.Globals.DatePrintLongFormat);
+                    return Ext.Date.format(date, yasmine.Globals.DatePrintLongFormat);
                 }
 
                 return null;

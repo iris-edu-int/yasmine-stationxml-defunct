@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.items.int.IntEditorModel', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorModel',
+Ext.define('yasmine.view.xml.builder.parameter.items.int.IntEditorModel', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorModel',
     alias: 'viewmodel.int-editor'
 });

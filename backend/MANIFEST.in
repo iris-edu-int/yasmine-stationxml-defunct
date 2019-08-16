@@ -1,9 +1,9 @@
 include README.rst
 include requirements.txt
-recursive-include  imct/static *
-recursive-include  imct/templates *
-recursive-include  imct/app/tests/integration/data *
-recursive-include  imct/app/tests/unit/data *
-recursive-include  imct *.ini
-recursive-include  imct/alembic *
-recursive-include  imct/tests *
+recursive-include  yasmine/static *
+recursive-include  yasmine/templates *
+recursive-include  yasmine/app/tests/integration/data *
+recursive-include  yasmine/app/tests/unit/data *
+recursive-include  yasmine *.ini
+recursive-include  yasmine/alembic *
+recursive-include  yasmine/tests *

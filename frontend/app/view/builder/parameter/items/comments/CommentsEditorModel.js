@@ -1,18 +1,18 @@
-Ext.define('imct.view.xml.builder.parameter.items.comments.CommentsEditorModel', {
-    extend: 'imct.view.xml.builder.parameter.ParameterItemEditorModel',
+Ext.define('yasmine.view.xml.builder.parameter.items.comments.CommentsEditorModel', {
+    extend: 'yasmine.view.xml.builder.parameter.ParameterItemEditorModel',
     alias: 'viewmodel.comments-editor',
     data: {
         selectedCommentRow: null
     },
     stores: {
         commentStore: {
-            model: 'imct.view.xml.builder.parameter.items.comments.Comment',
+            model: 'yasmine.view.xml.builder.parameter.items.comments.Comment',
             data: []
         }
     }
 });
 
-Ext.define('imct.view.xml.builder.parameter.items.comments.Comment', {
+Ext.define('yasmine.view.xml.builder.parameter.items.comments.Comment', {
     extend: 'Ext.data.Model',
     fields: [
         { name: '_value', defaultValue: null },
@@ -25,7 +25,7 @@ Ext.define('imct.view.xml.builder.parameter.items.comments.Comment', {
             depends: ['_begin_effective_time'],
             convert: function (value, record) {
                 var date = record.get('_begin_effective_time');
-                return !date ? null : Ext.Date.parse(date, IMCT.Globals.DateReadFormat, true);
+                return !date ? null : Ext.Date.parse(date, yasmine.Globals.DateReadFormat, true);
             }
         },
         {
@@ -34,7 +34,7 @@ Ext.define('imct.view.xml.builder.parameter.items.comments.Comment', {
             depends: ['_end_effective_time'],
             convert: function (value, record) {
                 var date = record.get('_end_effective_time');
-                return !date ? null : Ext.Date.parse(date, IMCT.Globals.DateReadFormat, true);
+                return !date ? null : Ext.Date.parse(date, yasmine.Globals.DateReadFormat, true);
             }
         }
     ]

@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.templates.TemplateViewModel', {
+Ext.define('yasmine.view.xml.builder.templates.TemplateViewModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.template-view',
     data: {
@@ -9,7 +9,7 @@ Ext.define('imct.view.xml.builder.templates.TemplateViewModel', {
     },
     stores: {
         templateStore: {
-            model: 'imct.view.xml.builder.templates.Template',
+            model: 'yasmine.view.xml.builder.templates.Template',
             autoLoad: true,
             proxy: {
                 type: 'rest',
@@ -21,13 +21,13 @@ Ext.define('imct.view.xml.builder.templates.TemplateViewModel', {
     formulas: {
         title: function (get) {
             var type = get('nodeType');
-            if (type === imct.NodeTypeEnum.network) {
+            if (type === yasmine.NodeTypeEnum.network) {
                 return 'Network\'s Templates';
             }
-            if (type === imct.NodeTypeEnum.station) {
+            if (type === yasmine.NodeTypeEnum.station) {
                 return 'Station\'s Templates';
             }
-            if (type === imct.NodeTypeEnum.channel) {
+            if (type === yasmine.NodeTypeEnum.channel) {
                 return 'Channel\'s Templates';
             }
         },
@@ -40,15 +40,15 @@ Ext.define('imct.view.xml.builder.templates.TemplateViewModel', {
     }
 });
 
-Ext.define('imct.view.xml.builder.templates.Template', {
+Ext.define('yasmine.view.xml.builder.templates.Template', {
     extend: 'Ext.data.Model',
     fields: [
         { name: 'name', type: 'string' },
         { name: 'description', type: 'string', convert: function (v, record) {
             var desc = record.get('description');
-            return desc ? desc : IMCT.Globals.NotApplicable
+            return desc ? desc : yasmine.Globals.NotApplicable
         } },
-        { name: 'start', type: 'date', dateFormat: IMCT.Globals.DateReadFormat },
-        { name: 'end', type: 'date', dateFormat: IMCT.Globals.DateReadFormat }
+        { name: 'start', type: 'date', dateFormat: yasmine.Globals.DateReadFormat },
+        { name: 'end', type: 'date', dateFormat: yasmine.Globals.DateReadFormat }
     ]
 });

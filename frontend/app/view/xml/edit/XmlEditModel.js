@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.edit.XmlEditModel', {
+Ext.define('yasmine.view.xml.edit.XmlEditModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.xml-edit',
     data: {

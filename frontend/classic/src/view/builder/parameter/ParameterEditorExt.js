@@ -1,7 +1,7 @@
-Ext.define('imct.view.xml.builder.parameter.ParameterEditorExt', {
+Ext.define('yasmine.view.xml.builder.parameter.ParameterEditorExt', {
     extend: 'Ext.window.Window',
     xtype: 'parameter-editor-ext',
-    requires: ['imct.view.xml.builder.parameter.ParameterEditorModel','imct.view.xml.builder.parameter.ParameterEditorControllerExt'],
+    requires: ['yasmine.view.xml.builder.parameter.ParameterEditorModel','yasmine.view.xml.builder.parameter.ParameterEditorControllerExt'],
     controller: 'parameter-editor-ext',
     viewModel: 'parameter-editor',
     bind: {

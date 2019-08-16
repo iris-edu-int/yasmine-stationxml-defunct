@@ -1,4 +1,4 @@
-Ext.define('imct.model.Parameter', {
+Ext.define('yasmine.model.Parameter', {
     extend: 'Ext.data.Model',
     proxy: {
         type: 'rest',
@@ -52,10 +52,10 @@ Ext.define('imct.model.Parameter', {
         mapping: 'value_obj',
         convertOnSet: false,
         convert: function (value, record){
-            if (record.get('attr_class') == 'imct-date-field') {
+            if (record.get('attr_class') == 'yasmine-date-field') {
                 if (value) {
                     if (typeof value === 'string') {
-                        return Ext.Date.parse(value, IMCT.Globals.DateReadFormat, true);
+                        return Ext.Date.parse(value, yasmine.Globals.DateReadFormat, true);
                     } else if (value instanceof Date) {
                         return value;
                     }
@@ -70,11 +70,11 @@ Ext.define('imct.model.Parameter', {
         convertOnSet: false,
         convert: function (v, record){
             var attr_class = record.get('class')
-            return !(attr_class == 'imct-text-field' ||
-                     attr_class == 'imct-longitude-field' ||
-                     attr_class == 'imct-latitude-field' ||
-                     attr_class == 'imct-int-field' ||
-                     attr_class == 'imct-float-field' || attr_class == 'imct-date-field')
+            return !(attr_class == 'yasmine-text-field' ||
+                     attr_class == 'yasmine-longitude-field' ||
+                     attr_class == 'yasmine-latitude-field' ||
+                     attr_class == 'yasmine-int-field' ||
+                     attr_class == 'yasmine-float-field' || attr_class == 'yasmine-date-field')
         }
     }]
 });

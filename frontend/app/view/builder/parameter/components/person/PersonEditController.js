@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.parameter.components.person.PersonEditController', {
+Ext.define('yasmine.view.xml.builder.parameter.components.person.PersonEditController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.person-edit',
     id: 'person-edit-controller', // Required for event listening
@@ -8,7 +8,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonEditControll
         var person = this.getViewModel().get('person');
         if (person.get('_names')) {
             person.get('_names').forEach(function(item) {
-                record = new imct.view.xml.builder.parameter.components.person.Name();
+                record = new yasmine.view.xml.builder.parameter.components.person.Name();
                 record.set('_name', item._name);
                 record.modified = {};
                 that.insertRecord('nameStore', record)
@@ -16,7 +16,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonEditControll
         }
         if (person.get('_agencies')) {
             person.get('_agencies').forEach(function(item) {
-                record = new imct.view.xml.builder.parameter.components.person.Agency();
+                record = new yasmine.view.xml.builder.parameter.components.person.Agency();
                 record.set('_name', item._name);
                 record.modified = {};
                 that.insertRecord('agencyStore', record)
@@ -24,7 +24,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonEditControll
         }
         if (person.get('_emails')) {
             person.get('_emails').forEach(function(item) {
-                record = new imct.view.xml.builder.parameter.components.person.Email();
+                record = new yasmine.view.xml.builder.parameter.components.person.Email();
                 record.set('_email', item._email);
                 record.modified = {};
                 that.insertRecord('emailStore', record)
@@ -32,7 +32,7 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonEditControll
         }
         if (person.get('_phones')) {
             person.get('_phones').forEach(function(item) {
-                record = new imct.view.xml.builder.parameter.components.person.Phone();
+                record = new yasmine.view.xml.builder.parameter.components.person.Phone();
                 record.set('_country_code', item.country_code);
                 record.set('_area_code', item.area_code);
                 record.set('_phone_number', item.phone_number);
@@ -57,22 +57,22 @@ Ext.define('imct.view.xml.builder.parameter.components.person.PersonEditControll
         this.closeView();
     },
     onAddNameClick: function () {
-        var record = new imct.view.xml.builder.parameter.components.person.Name();
+        var record = new yasmine.view.xml.builder.parameter.components.person.Name();
         this.insertRecord('nameStore', record)
         this.enableEditing('namegrid', record);
     },
     onAddAgencyClick: function () {
-        var record = new imct.view.xml.builder.parameter.components.person.Agency();
+        var record = new yasmine.view.xml.builder.parameter.components.person.Agency();
         this.insertRecord('agencyStore', record)
         this.enableEditing('agencygrid', record);
     },
     onAddEmailClick: function () {
-        var record = new imct.view.xml.builder.parameter.components.person.Email();
+        var record = new yasmine.view.xml.builder.parameter.components.person.Email();
         this.insertRecord('emailStore', record)
         this.enableEditing('emailgrid', record);
     },
     onAddPhoneClick: function () {
-        var record = new imct.view.xml.builder.parameter.components.person.Phone();
+        var record = new yasmine.view.xml.builder.parameter.components.person.Phone();
         this.insertRecord('phoneStore', record)
         this.enableEditing('phonegrid', record);
     },

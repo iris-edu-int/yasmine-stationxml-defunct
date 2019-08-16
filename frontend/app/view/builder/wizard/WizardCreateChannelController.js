@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelController', {
+Ext.define('yasmine.view.xml.builder.wizard.WizardCreateChannelController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.wizard-create-channel',
     onCancelClick: function (){
@@ -101,7 +101,7 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelController', {
                 var orient = viewModel.get('orient');
                 var codePrefix = viewModel.get('codePrefix');
                 
-                if (orient == imct.ChannelOrient.ZNE){
+                if (orient == yasmine.ChannelOrient.ZNE){
                     channelInfo.get('code1').set('value', codePrefix + 'Z')
                     channelInfo.get('code2').set('value', codePrefix + 'N')
                     channelInfo.get('code3').set('value', codePrefix + 'E')
@@ -114,7 +114,7 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelController', {
                     channelInfo.get('azimuth2').set('value', 0)
                     channelInfo.get('azimuth3').set('value', 90)                    
                     
-                }else if (orient == imct.ChannelOrient.Z12){
+                }else if (orient == yasmine.ChannelOrient.Z12){
                     channelInfo.get('code1').set('value', codePrefix + 'Z')
                     channelInfo.get('code2').set('value', codePrefix + '1')
                     channelInfo.get('code3').set('value', codePrefix + '2') 
@@ -127,7 +127,7 @@ Ext.define('imct.view.xml.builder.wizard.WizardCreateChannelController', {
                     channelInfo.get('azimuth2').set('value', 0)
                     channelInfo.get('azimuth3').set('value', 0)                     
                     
-                }else if (orient == imct.ChannelOrient.Z){
+                }else if (orient == yasmine.ChannelOrient.Z){
                     channelInfo.get('code1').set('value',  codePrefix + 'Z')
                     channelInfo.get('code2').set('value', '')
                     channelInfo.get('code3').set('value', '')    

@@ -1,8 +1,8 @@
-Ext.define('imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditor', {
+Ext.define('yasmine.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditor', {
     extend: 'Ext.form.Panel',
-    xtype: 'imct-channel-equipment-field',
-    requires: ['imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditorModel',
-        'imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditorController'],
+    xtype: 'yasmine-channel-equipment-field',
+    requires: ['yasmine.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditorModel',
+        'yasmine.view.xml.builder.parameter.items.channelequipment.ChannelEquipmentEditorController'],
     viewModel: 'channel-equipment-editor',
     controller: 'channel-equipment-editor',
     layout: 'vbox',
@@ -47,12 +47,12 @@ Ext.define('imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipm
                 xtype: 'datefield',
                 fieldLabel: 'Installation Date',
                 bind: '{installationDate}',
-                format: IMCT.Globals.DatePrintLongFormat
+                format: yasmine.Globals.DatePrintLongFormat
             },{
                 xtype: 'datefield',
                 fieldLabel: 'Removal Date',
                 bind: '{removalDate}',
-                format: IMCT.Globals.DatePrintLongFormat
+                format: yasmine.Globals.DatePrintLongFormat
             },{
                 xtype: 'textfield',
                 fieldLabel: 'Resource Id',
@@ -82,9 +82,9 @@ Ext.define('imct.view.xml.builder.parameter.items.channelequipment.ChannelEquipm
                     flex: 1,
                     editor: {
                         xtype: 'datefield',
-                        format: IMCT.Globals.DatePrintLongFormat
+                        format: yasmine.Globals.DatePrintLongFormat
                     },
-                    format: IMCT.Globals.DatePrintLongFormat,
+                    format: yasmine.Globals.DatePrintLongFormat,
                     dataIndex: 'value'
                 }],
                 listeners: {

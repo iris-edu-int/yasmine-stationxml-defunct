@@ -1,7 +1,7 @@
-Ext.define('imct.view.settings.SettingsList', {
+Ext.define('yasmine.view.settings.SettingsList', {
     extend: 'Ext.form.Panel',
     xtype: 'settings-list',
-    requires: ['imct.view.settings.SettingsListController','imct.view.settings.SettingsListModel'],
+    requires: ['yasmine.view.settings.SettingsListController','yasmine.view.settings.SettingsListModel'],
     title: 'Settings',
     frame: true,
     scrollable: true,
@@ -125,7 +125,7 @@ Ext.define('imct.view.settings.SettingsList', {
     tools: [{
         type: 'help',
         handler: function (){
-            imct.utils.HelpUtil.helpMe('settings', 'Settings')
+            yasmine.utils.HelpUtil.helpMe('settings', 'Settings')
         }
     }]
 });

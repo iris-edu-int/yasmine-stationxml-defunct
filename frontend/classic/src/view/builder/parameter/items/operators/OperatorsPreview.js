@@ -1,5 +1,5 @@
-Ext.define("imct.view.xml.builder.parameter.items.operators.OperatorsPreview", {
-    xtype: 'imct-operators-field-preview',
+Ext.define("yasmine.view.xml.builder.parameter.items.operators.OperatorsPreview", {
+    xtype: 'yasmine-operators-field-preview',
     getPreview: function(value) {
         if (!value || value.length === 0) {
             return null;

@@ -1,4 +1,4 @@
-Ext.define('imct.view.xml.builder.BuilderModel', {
+Ext.define('yasmine.view.xml.builder.BuilderModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.builder',
     data: {

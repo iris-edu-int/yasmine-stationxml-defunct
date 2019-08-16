@@ -1,4 +1,4 @@
-Ext.define('imct.NodeTypeEnum', {
+Ext.define('yasmine.NodeTypeEnum', {
     singleton: true,
 
     network: 1,
