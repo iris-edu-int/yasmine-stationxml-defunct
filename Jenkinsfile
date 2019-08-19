@@ -45,7 +45,7 @@ pipeline {
 				echo "Error detected on frontend chmod, but we will continue."
 			}
 			sh "echo 'cd /opt/yasmine/frontend; sencha app build' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/yasmine-stationxml-editor:/opt/yasmine frontend-test bash"
-                        sh "echo 'cd /opt/yasmine/backend; python setup.py sdist; pyinstaller -y pyinstaller.spec' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/yasmine:/opt/yasmine-stationxml-editor backend-test bash"
+                        sh "echo 'cd /opt/yasmine/backend; python setup.py sdist; pyinstaller -y pyinstaller.spec' | sudo docker run -i --rm --user=\"jenkins\" -w=\"/home/jenkins\" --volume /local_builds/workspace/yasmine-stationxml-editor:/opt/yasmine backend-test bash"
                     }
                 }
             }
