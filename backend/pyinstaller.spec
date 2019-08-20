@@ -52,7 +52,9 @@ import_submodules = (
 for submod in import_submodules:
 	_hiddenimports += collect_submodules(submod)
 
+# pyinstaller:  collect_data_files(package,include_py_files=False,subdir=None)
 _datas=collect_data_files('yasmine')
+_datas += collect_data_files('yasmine',False,'static')
 _datas.append( ('/usr/local/lib/python3.6/site-packages/obspy/imaging/data/*.*','site-packages/obspy/imaging/data') )
 
 a = Analysis(['yasmine.py'],
