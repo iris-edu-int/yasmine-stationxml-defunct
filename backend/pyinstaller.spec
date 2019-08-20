@@ -9,7 +9,6 @@ block_cipher = None
 _hiddenimports=[]
 
 #import_submodules = (
-#'PyInstaller'
 #'alembic',
 #'altgraph',
 #'apscheduler',
@@ -46,6 +45,7 @@ _hiddenimports=[]
 #'wheel')
 
 import_submodules = (
+'alembic',
 'scipy'
 )
 
