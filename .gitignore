@@ -1,0 +1,5 @@
+# ignore these files in github
+.settings
+.DS_Store
+.project
+.pydevproject
