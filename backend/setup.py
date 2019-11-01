@@ -2,8 +2,11 @@
 from setuptools import find_packages, setup
 
 requires = []
+
 with open('requirements.txt', 'rt') as f:
     requires = f.read().split()
+
+module_name = 'yasmine'
 
 setup(
     name='yasmine',
@@ -14,7 +17,11 @@ setup(
     },
     include_package_data=True,
     description='',
-    scripts=['yasmine.py'],
+    entry_points={
+        'console_scripts': [
+            '%s = %s:main' % (module_name, module_name),
+        ],
+    },
     install_requires=requires,
     classifiers=[
         'Environment :: Web Environment',

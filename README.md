@@ -24,8 +24,8 @@ IRIS and RESIF.
 ### continue with pip install of yasmine
 3.  create and/or change to directory for installing yasmine
 ```
-    mkdir yasmine          (optional)
-    cd yasmine             (substitute your directory name)
+    mkdir yasmine-app          (optional)
+    cd yasmine-app             (substitute your directory name)
 ```
 
 4.  download the latest yasmine-1.x.tar.gz file and the latest IRIS.zip from the Nominal Response Library at IRIS DMC
@@ -41,6 +41,12 @@ IRIS and RESIF.
     python -m pip install yasmine-1.x.tar.gz
 ``` 
 
+5_5.  run NRL update routine
+
+```
+TBD
+```
+
 6. run the database preparation script
 
 ```
@@ -48,19 +54,13 @@ IRIS and RESIF.
 ```
 
 ## Instructions to run yasmine
-1.  change directory to yasmine install
-
-```
-    cd yasmine
-```
-
-2.  run the yasmine server (using port 8080 in this example)
+1.  run the yasmine server (using port 8080 in this example)
 
 ```
     yasmine runserver --port 8080
 ```
 
-3.  connect web browser to yasmine server
+2.  connect web browser to yasmine server
 
 ```
     http://localhost:8080

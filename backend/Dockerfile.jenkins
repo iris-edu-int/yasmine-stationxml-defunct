@@ -25,12 +25,9 @@ RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
-# for this container, we will repurpose it later to perform a pyinstaller bundling action
-RUN pip install pyinstaller
-
 # for this container, we want to be able to run it as a normal user, we'll go with jenkins as the name
 RUN useradd -m jenkins && \
     cd && cp -R .bashrc .profile /home/jenkins
 
-CMD python yasmine.py syncdb upgrade heads ; python yasmine.py runserver --debug
+CMD python yasmine syncdb upgrade heads ; python yasmine runserver --debug
 
