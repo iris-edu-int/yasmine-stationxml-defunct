@@ -56,8 +56,8 @@ def run_test_cmd(*_, **__):
     result = runner.run(alltests)
     sys.exit(not result.wasSuccessful())
 
-
-if __name__ == "__main__":
+def main(args):
+########if __name__ == "__main__":
 
     create_sys_folder()
 
@@ -76,6 +76,10 @@ if __name__ == "__main__":
     parser_runserver.add_argument("--host", type=str, default=TORNADO_HOST, help="Hostname to listen on (%(default)s))")
     parser_runserver.add_argument("--debug", action='store_true', help="Start server in the debug mode.")
     parser_runserver.set_defaults(func=runserver_cmd)
-    values = parser.parse_args()
+    values = parser.parse_args(args)
     if values.__dict__:
         values.func(values)
+
+if __name__ == "__main__":
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main(sys.argv[1:]))
