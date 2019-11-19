@@ -19,7 +19,7 @@ setup(
     description='',
     entry_points={
         'console_scripts': [
-            '%s = %s:main' % (module_name, module_name),
+            '%s = %s:main(sys.argv[1:])' % (module_name, module_name),
         ],
     },
     install_requires=requires,
