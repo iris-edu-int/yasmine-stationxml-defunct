@@ -31,7 +31,7 @@ IRIS and RESIF.
 4.  download the latest yasmine-1.x.tar.gz file and the latest IRIS.zip from the Nominal Response Library at IRIS DMC
 
 ```
-    curl -o yasmine-1.x.tar.gz "http://https://github.com/iris-edu-int/yasmine-stationxml-editor/releases/download/1.x/yasmine-1.x.tar.gz"
+    curl -o yasmine-1.x.tar.gz "https://github.com/iris-edu-int/yasmine-stationxml-editor/releases/download/1.x/yasmine-1.x.tar.gz"
     curl -o IRIS.zip "http://ds.iris.edu/NRL/IRIS.zip"
 ```
 
