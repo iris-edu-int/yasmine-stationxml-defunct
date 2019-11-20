@@ -41,7 +41,7 @@ IRIS and RESIF.
     python -m pip install yasmine-1.x.tar.gz
 ``` 
 
-5_5.  run NRL update routine
+5_5.  download the Nominal Response Library
 
 ```
 TBD
@@ -66,8 +66,32 @@ TBD
     http://localhost:8080
 ```
 
+## environment variables -- optional to set, otherwise a default value is used
 
-## Instructions to develop #
+```
+YASMINE_APP_DIR - this is where the application's run time files such as logs and the db can be found
+	default: current working directory when the application is run
+	set to:  a filesystem directory name that will serve as a static location for app files regardless of current working directory
+
+YASMINE_DB_FILE - the location of the sqlite database for yasmine
+	default: located at the location of the application code install + 'db.sqlite'
+	set to:  a file name with a .sqlite suffix that serves as a static reference to the database for yasmine
+
+YASMINE_TORNADO_HOST - the tornado server hostname
+	default: localhost
+	set to:  a host name where the yasmine backend service can be found in a URL
+
+YASMINE_TORNADO_PORT - the tornado server port number
+    default: 80
+    set to:  a port number where the yasmine backend service can be found in a URL
+
+YASMINE_NRL_URL - The (presumably) remote URL where the source Nominal Response Library download can be found
+	default: http://ds.iris.edu/NRL/IRIS.zip
+	set to:  a URL where the desired NRL download can be found
+```
+
+
+## Instructions to develop -- may be out of date
 ### Common ##
 #### Create or modify database definition
 1. Run ``python yasmine.py syncdb revision --autogenerate`` to create migration script
@@ -103,8 +127,7 @@ TBD
 3. Run ``sencha app build`` to build UI
 
 ## Credits
-v1.0 of yasmine originally created by Instrumental Software Technologies under contract with IRIS
-v2.0 of yasmine is currently pending at time of this release
+v1.0 of yasmine originally created by Instrumental Software Technologies, Inc. (ISTI) under contract with IRIS
 
 ## License
 yasmine is released under the Lesser GNU Public License v3
