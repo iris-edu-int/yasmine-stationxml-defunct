@@ -56,8 +56,12 @@ def run_test_cmd(*_, **__):
     result = runner.run(alltests)
     sys.exit(not result.wasSuccessful())
 
-def main(args):
-########if __name__ == "__main__":
+def main():
+
+    # get command line arguments after the command $0
+    args = []
+    if (len(sys.argv) > 1):
+        args = sys.argv[1:]
 
     create_sys_folder()
 
@@ -81,4 +85,4 @@ def main(args):
         values.func(values)
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main()

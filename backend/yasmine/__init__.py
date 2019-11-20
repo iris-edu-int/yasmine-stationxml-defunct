@@ -1,7 +1,5 @@
 from yasmine import __main__
 
-def main(args):
+def main():
     print("-- yasmine init --")
-    if (len(args) == 0):
-        args = "NO ARGS"
-    __main__.main(args)
+    __main__.main()
