@@ -13,7 +13,7 @@ import tornado.web
 from yasmine.app.handlers import common, config, wizard
 from yasmine.app.handlers import xml_bldr, xml_list, xml_nrl, xml_tpl
 from yasmine.app.handlers.base import ErrorHandler
-from yasmine.app.settings import TORNADO_SETTINGS, TORNADO_PORT, TORNADO_HOST, LOGGING_CONFIG, LOGIING_CONSOLE_CONFIG, NRL_CRON
+from yasmine.app.settings import TORNADO_SETTINGS, TORNADO_PORT, TORNADO_HOST, LOGGING_CONFIG, LOGGING_CONSOLE_CONFIG, NRL_CRON
 from yasmine.app.utils.facade import ProcessMixin
 from yasmine.app.utils.nrl_io import SyncNrl
 
@@ -26,7 +26,7 @@ class Application(tornado.web.Application, ProcessMixin):
     def __init__(self, debug=False):
         TORNADO_SETTINGS['debug'] = debug
         if debug:
-            LOGIING_CONSOLE_CONFIG['level'] = logging.DEBUG
+            LOGGING_CONSOLE_CONFIG['level'] = logging.DEBUG
         dictConfig(LOGGING_CONFIG)
 
         tornado.web.Application.__init__(self, [
@@ -80,8 +80,11 @@ class Application(tornado.web.Application, ProcessMixin):
 
 
 def runserver(debug, host=TORNADO_HOST, port=TORNADO_PORT):
+    print("Running yasmine server...")
     app = Application(debug)
     app.listen(port=port, address=host)
+    fhost = 'localhost' if len(host) == 0 else host
+    print(f'Connect to http://{fhost}:{port:d}/')
     try:
         tornado.ioloop.IOLoop.instance().start()
     except KeyboardInterrupt:
