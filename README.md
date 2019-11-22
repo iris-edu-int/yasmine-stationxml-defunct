@@ -6,6 +6,8 @@ is a common development of IRIS and RESIF.
 Development and addition of new features is shared and agreed between
 IRIS and RESIF.
 
+_Updated Nov 21, 2019_
+
 ## Requirements
 1. Python 3.6.5 or later
 2. pip
@@ -28,11 +30,10 @@ IRIS and RESIF.
     cd yasmine-app             (substitute your directory name)
 ```
 
-4.  download the latest yasmine-1.x.tar.gz file and the latest IRIS.zip from the Nominal Response Library at IRIS DMC
+4.  download the yasmine-1.0.tar.gz file to an install directory
 
 ```
     curl -o yasmine-1.x.tar.gz "https://github.com/iris-edu-int/yasmine-stationxml-editor/releases/download/1.x/yasmine-1.x.tar.gz"
-    curl -o IRIS.zip "http://ds.iris.edu/NRL/IRIS.zip"
 ```
 
 5. install yasmine using pip
@@ -41,15 +42,10 @@ IRIS and RESIF.
     python -m pip install yasmine-1.x.tar.gz
 ``` 
 
-5_5.  download the Nominal Response Library
+6. run the database preparation script and create app directory
 
 ```
-TBD
-```
-
-6. run the database preparation script
-
-```
+    cd <my working directory> or export YASMINE_APP_DIR=<my working directory>
     yasmine syncdb upgrade heads
 ```
 
@@ -58,6 +54,9 @@ TBD
 
 ```
     yasmine runserver --port 8080
+    OR
+    export YASMINE_TORNADO_PORT=8080
+    yasmine runserver
 ```
 
 2.  connect web browser to yasmine server
